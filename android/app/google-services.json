@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "210054971535",
+    "project_id": "awani-5e5f5",
+    "storage_bucket": "awani-5e5f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210054971535:android:46e6c23ac31e4d1fb230fa",
+        "android_client_info": {
+          "package_name": "com.example.aawani"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210054971535-el09bobhb8r0grdlapbf7tgcd9qrtsv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx8Knt6dB3tBFyWHsrmRKpxKur8iTBPrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210054971535-el09bobhb8r0grdlapbf7tgcd9qrtsv4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
