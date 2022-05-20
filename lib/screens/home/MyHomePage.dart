@@ -1,4 +1,5 @@
 import 'package:aawani/resource/Colors.dart';
+import 'package:aawani/screens/addPost/FeedPost.dart';
 import 'package:aawani/screens/addPost/addPost.dart';
 import 'package:aawani/screens/profile/ProfilePage.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   int page = 0;
   List<Widget> listWidget = [
-    Text('Home'),
+    FeedPost(),
     Text('explore'),
     AddPost(),
     Text('Search'),
@@ -45,10 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               curve: Curves.easeOutExpo, // tab animation curves
               duration: Duration(milliseconds: 430), // tab animation duration
-              gap: 5, // the tab button gap between icon and text
+              gap: 3, // the tab button gap between icon and text
               color: Colors.grey[800], // unselected icon color
               activeColor: primaryColor, // selected icon and text color
-              iconSize: 24, // tab button icon size
+              iconSize: 20, // tab button icon size
               padding: EdgeInsets.symmetric(
                   horizontal: 20, vertical: 5), // navigation bar padding
               tabs: [

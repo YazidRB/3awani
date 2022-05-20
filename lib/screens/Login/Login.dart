@@ -125,7 +125,7 @@ class _LoginState extends State<Login> {
 
                         await getProfileData();
 
-                        Navigator.of(context).pushNamed('homePage');
+                        Navigator.of(context).pushReplacementNamed('homePage');
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'user-not-found') {
                           print('No user found for that email.');

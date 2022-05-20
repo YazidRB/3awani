@@ -1,7 +1,6 @@
-import 'dart:typed_data';
+import 'dart:io';
 import 'package:aawani/functions/FireStoreFunctions.dart';
 import 'package:aawani/resource/Globals.dart' as globals;
-import 'package:aawani/functions/Functions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -17,28 +16,33 @@ final title =
     Text('Add Post', style: GoogleFonts.quicksand(color: Colors.grey));
 
 class _AddPostState extends State<AddPost> {
-  Uint8List? _file;
+  File? _file;
   TextEditingController textEditingController = TextEditingController();
+  bool _isLoading = false;
 
   postImage(String uid, String username, String profImage) async {
     try {
       String res = await FireStoreFunctions().uploadPost(
           textEditingController.text, _file!, uid, username, 'profImage');
-      print('Donnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn');
 
       if (res == 'success') {
+        setState(() {
+          _isLoading = false;
+        });
+
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text('Posted !')));
-        print('Donnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn2');
+        clearImage();
       } else {
+        setState(() {
+          _isLoading = false;
+        });
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text(res)));
-        print('Donnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn3');
       }
     } catch (e) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(e.toString())));
-      print('Donnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn4');
     }
   }
 
@@ -54,9 +58,11 @@ class _AddPostState extends State<AddPost> {
                 child: const Text('Take a photo'),
                 onPressed: () async {
                   Navigator.of(context).pop();
-                  Uint8List file = await pickImage(ImageSource.camera);
+                  final xfile =
+                      await ImagePicker().pickImage(source: ImageSource.camera);
+
                   setState(() {
-                    _file = file;
+                    _file = File(xfile!.path);
                   });
                 },
               ),
@@ -65,9 +71,10 @@ class _AddPostState extends State<AddPost> {
                 child: const Text('Chose a Picture'),
                 onPressed: () async {
                   Navigator.of(context).pop();
-                  Uint8List file = await pickImage(ImageSource.gallery);
+                  final xfile = await ImagePicker()
+                      .pickImage(source: ImageSource.gallery);
                   setState(() {
-                    _file = file;
+                    _file = File(xfile!.path);
                   });
                 },
               ),
@@ -81,6 +88,12 @@ class _AddPostState extends State<AddPost> {
             ],
           );
         });
+  }
+
+  void clearImage() {
+    setState(() {
+      _file = null;
+    });
   }
 
   @override
@@ -99,7 +112,7 @@ class _AddPostState extends State<AddPost> {
               backgroundColor: Colors.white,
               elevation: 0,
               leading: IconButton(
-                  onPressed: () {},
+                  onPressed: clearImage,
                   icon: Icon(
                     Icons.arrow_back,
                     color: Colors.grey,
@@ -109,7 +122,7 @@ class _AddPostState extends State<AddPost> {
                 TextButton(
                     onPressed: () async {
                       await postImage(globals.uid!, globals.userName!,
-                          ' globals.profImage!');
+                          'globals.profImage!');
                     },
                     child: Text('Post',
                         style: GoogleFonts.quicksand(
@@ -122,6 +135,12 @@ class _AddPostState extends State<AddPost> {
               padding: EdgeInsets.symmetric(vertical: 24),
               child: Column(
                 children: [
+                  _isLoading
+                      ? const LinearProgressIndicator()
+                      : const Padding(
+                          padding: EdgeInsets.only(top: 0),
+                        ),
+                  const Divider(),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,12 +164,7 @@ class _AddPostState extends State<AddPost> {
                           width: 45,
                           child: AspectRatio(
                             aspectRatio: 487 / 451,
-                            child: Container(
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: MemoryImage(_file!),
-                                        fit: BoxFit.cover,
-                                        alignment: Alignment.center))),
+                            child: Container(decoration: BoxDecoration()),
                           ),
                         ),
                         Divider(

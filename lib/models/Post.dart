@@ -9,7 +9,8 @@ class Post {
   final pushlishedDate;
   final String postUrl;
   final String profImage;
-  final likes;
+  final up;
+  final down;
 
   Post(
       {required this.pushlishedDate,
@@ -19,7 +20,8 @@ class Post {
       required this.postID,
       required this.postUrl,
       required this.profImage,
-      required this.likes});
+      required this.down,
+      required this.up});
 
   Map<String, dynamic> toJson() => {
         'description': description,
@@ -28,7 +30,8 @@ class Post {
         'postID': postID,
         'postUrl': postUrl,
         'profImage': profImage,
-        'likes': likes,
+        'up': up,
+        'down': down,
         'pushlishedDate': pushlishedDate
       };
   fromSnap(DocumentSnapshot snap) {
@@ -41,7 +44,8 @@ class Post {
         uid: snapshot['uid'],
         postID: snapshot['postID'],
         postUrl: snapshot['postUrl'],
-        likes: snapshot['likes'],
+        up: snapshot['up'],
+        down: snapshot['down'],
         profImage: snapshot['profImage']);
   }
 }
