@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Yazid RB\\Desktop\\3awani-main\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Yazid RB\\.gradle\\caches\\transforms-2\\files-2.1\\8a497c5b121a097b15cb081b25db4c54\\browser-1.0.0\\res\\values\\values.xml",
@@ -95,22 +95,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Yazid RB\\Desktop\\3awani-main\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "173,807",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "465,971"
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,281,385,494,614,709",
+                        "endColumns": "143,81,103,108,119,94,71",
+                        "endOffsets": "194,276,380,489,609,704,776"
                     },
                     "to": {
-                        "startLines": "134,139",
-                        "startColumns": "4,4",
-                        "startOffsets": "9763,10060",
-                        "endLines": "138,141",
-                        "endColumns": "12,12",
-                        "endOffsets": "10055,10224"
+                        "startLines": "126,127,128,129,130,131,132",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "8966,9110,9192,9296,9405,9525,9620",
+                        "endColumns": "143,81,103,108,119,94,71",
+                        "endOffsets": "9105,9187,9291,9400,9520,9615,9687"
                     }
                 },
                 {
@@ -133,20 +131,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Yazid RB\\Desktop\\3awani-main\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "source": "C:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,281,385,494,614,709",
-                        "endColumns": "143,81,103,108,119,94,71",
-                        "endOffsets": "194,276,380,489,609,704,776"
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "173,807",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "465,971"
                     },
                     "to": {
-                        "startLines": "126,127,128,129,130,131,132",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "8966,9110,9192,9296,9405,9525,9620",
-                        "endColumns": "143,81,103,108,119,94,71",
-                        "endOffsets": "9105,9187,9291,9400,9520,9615,9687"
+                        "startLines": "134,139",
+                        "startColumns": "4,4",
+                        "startOffsets": "9763,10060",
+                        "endLines": "138,141",
+                        "endColumns": "12,12",
+                        "endOffsets": "10055,10224"
                     }
                 }
             ]

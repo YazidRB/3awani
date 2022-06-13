@@ -12,8 +12,8 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\Users\Yazid RB\Desktop\3awani-main\android\app\src\debug\AndroidManifest.xml:6:5-66
-14-->C:\Users\Yazid RB\Desktop\3awani-main\android\app\src\debug\AndroidManifest.xml:6:22-64
+14-->C:\Users\Yazid RB\Documents\GitHub\3awani\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\Yazid RB\Documents\GitHub\3awani\android\app\src\debug\AndroidManifest.xml:6:22-64
 15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 15-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\f0329feb373d2ccf814ec3b7f075b5f6\jetified-firebase-auth-21.0.3\AndroidManifest.xml:24:5-79
 15-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\f0329feb373d2ccf814ec3b7f075b5f6\jetified-firebase-auth-21.0.3\AndroidManifest.xml:24:22-76
@@ -59,37 +59,37 @@
 54            android:value="2" />
 55
 56        <service
-56-->[:firebase_auth] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+56-->[:firebase_auth] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 57            android:name="com.google.firebase.components.ComponentDiscoveryService"
-57-->[:firebase_auth] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+57-->[:firebase_auth] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
 58            android:directBootAware="true"
 58-->[com.google.firebase:firebase-common:20.1.0] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\b4852656d5ba3a06c989306d01112117\jetified-firebase-common-20.1.0\AndroidManifest.xml:35:13-43
 59            android:exported="false" >
 59-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\f0329feb373d2ccf814ec3b7f075b5f6\jetified-firebase-auth-21.0.3\AndroidManifest.xml:66:13-37
 60            <meta-data
-60-->[:firebase_auth] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+60-->[:firebase_auth] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 61                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-61-->[:firebase_auth] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+61-->[:firebase_auth] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 62                android:value="com.google.firebase.components.ComponentRegistrar" />
-62-->[:firebase_auth] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+62-->[:firebase_auth] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 63            <meta-data
-63-->[:firebase_storage] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+63-->[:firebase_storage] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 64                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-64-->[:firebase_storage] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
+64-->[:firebase_storage] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
 65                android:value="com.google.firebase.components.ComponentRegistrar" />
-65-->[:firebase_storage] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+65-->[:firebase_storage] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 66            <meta-data
-66-->[:cloud_firestore] C:\Users\Yazid RB\Desktop\3awani-main\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+66-->[:cloud_firestore] C:\Users\Yazid RB\Documents\GitHub\3awani\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 67                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-67-->[:cloud_firestore] C:\Users\Yazid RB\Desktop\3awani-main\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+67-->[:cloud_firestore] C:\Users\Yazid RB\Documents\GitHub\3awani\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
 68                android:value="com.google.firebase.components.ComponentRegistrar" />
-68-->[:cloud_firestore] C:\Users\Yazid RB\Desktop\3awani-main\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+68-->[:cloud_firestore] C:\Users\Yazid RB\Documents\GitHub\3awani\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 69            <meta-data
-69-->[:firebase_core] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+69-->[:firebase_core] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 70                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-70-->[:firebase_core] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+70-->[:firebase_core] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 71                android:value="com.google.firebase.components.ComponentRegistrar" />
-71-->[:firebase_core] C:\Users\Yazid RB\Desktop\3awani-main\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+71-->[:firebase_core] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 72            <meta-data
 72-->[com.google.firebase:firebase-auth:21.0.3] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\f0329feb373d2ccf814ec3b7f075b5f6\jetified-firebase-auth-21.0.3\AndroidManifest.xml:67:13-69:85
 73                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
@@ -111,21 +111,21 @@
 81        </service>
 82
 83        <provider
-83-->[:image_picker_android] C:\Users\Yazid RB\Desktop\3awani-main\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+83-->[:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
 84            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-84-->[:image_picker_android] C:\Users\Yazid RB\Desktop\3awani-main\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
+84-->[:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
 85            android:authorities="com.example.aawani.flutter.image_provider"
-85-->[:image_picker_android] C:\Users\Yazid RB\Desktop\3awani-main\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
+85-->[:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
 86            android:exported="false"
-86-->[:image_picker_android] C:\Users\Yazid RB\Desktop\3awani-main\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+86-->[:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
 87            android:grantUriPermissions="true" >
-87-->[:image_picker_android] C:\Users\Yazid RB\Desktop\3awani-main\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+87-->[:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
 88            <meta-data
-88-->[:image_picker_android] C:\Users\Yazid RB\Desktop\3awani-main\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
+88-->[:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
 89                android:name="android.support.FILE_PROVIDER_PATHS"
-89-->[:image_picker_android] C:\Users\Yazid RB\Desktop\3awani-main\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+89-->[:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
 90                android:resource="@xml/flutter_image_picker_file_paths" />
-90-->[:image_picker_android] C:\Users\Yazid RB\Desktop\3awani-main\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
+90-->[:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
 91        </provider>
 92
 93        <uses-library

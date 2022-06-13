@@ -1,26 +1,26 @@
 [
     {
-        "merged": "C:\\Users\\Yazid RB\\Desktop\\3awani-main\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
-        "source": "C:\\Users\\Yazid RB\\.gradle\\caches\\transforms-2\\files-2.1\\6f6da31ded36fd59bf0fb59f8c9437af\\core-1.6.0\\res\\layout\\notification_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\Yazid RB\\Desktop\\3awani-main\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
+        "merged": "C:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
         "source": "C:\\Users\\Yazid RB\\.gradle\\caches\\transforms-2\\files-2.1\\6f6da31ded36fd59bf0fb59f8c9437af\\core-1.6.0\\res\\layout\\notification_action_tombstone.xml"
     },
     {
-        "merged": "C:\\Users\\Yazid RB\\Desktop\\3awani-main\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\Yazid RB\\.gradle\\caches\\transforms-2\\files-2.1\\6f6da31ded36fd59bf0fb59f8c9437af\\core-1.6.0\\res\\layout\\notification_template_part_time.xml"
-    },
-    {
-        "merged": "C:\\Users\\Yazid RB\\Desktop\\3awani-main\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\custom_dialog.xml",
-        "source": "C:\\Users\\Yazid RB\\.gradle\\caches\\transforms-2\\files-2.1\\6f6da31ded36fd59bf0fb59f8c9437af\\core-1.6.0\\res\\layout\\custom_dialog.xml"
-    },
-    {
-        "merged": "C:\\Users\\Yazid RB\\Desktop\\3awani-main\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "merged": "C:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
         "source": "C:\\Users\\Yazid RB\\.gradle\\caches\\transforms-2\\files-2.1\\6f6da31ded36fd59bf0fb59f8c9437af\\core-1.6.0\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "C:\\Users\\Yazid RB\\Desktop\\3awani-main\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
+        "merged": "C:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\Yazid RB\\.gradle\\caches\\transforms-2\\files-2.1\\6f6da31ded36fd59bf0fb59f8c9437af\\core-1.6.0\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
         "source": "C:\\Users\\Yazid RB\\.gradle\\caches\\transforms-2\\files-2.1\\6f6da31ded36fd59bf0fb59f8c9437af\\core-1.6.0\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\custom_dialog.xml",
+        "source": "C:\\Users\\Yazid RB\\.gradle\\caches\\transforms-2\\files-2.1\\6f6da31ded36fd59bf0fb59f8c9437af\\core-1.6.0\\res\\layout\\custom_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
+        "source": "C:\\Users\\Yazid RB\\.gradle\\caches\\transforms-2\\files-2.1\\6f6da31ded36fd59bf0fb59f8c9437af\\core-1.6.0\\res\\layout\\notification_action.xml"
     }
 ]
