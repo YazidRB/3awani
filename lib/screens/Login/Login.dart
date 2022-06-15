@@ -42,6 +42,9 @@ class _LoginState extends State<Login> {
       globals.categories['physical'] = data['categories']['physical'];
       globals.categories['drugs'] = data['categories']['drugs'];
       globals.categories['others'] = data['categories']['others'];
+      globals.profImage = data["profImage"] != null
+          ? data["profImage"]
+          : "assets/images/default-avatar.png";
 
       globals.helpType = data['userType'];
     }

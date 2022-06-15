@@ -148,4 +148,12 @@ class FireStoreFunctions {
       print(e.toString());
     }
   }
+
+  Future<void> signOut() async {
+    await auth.signOut();
+  }
+
+  Future<void> messageTab(String userName, String userNameFriend) async {
+    firestore.collection('chat').doc(userName).set({"ok": "okokokok"});
+  }
 }

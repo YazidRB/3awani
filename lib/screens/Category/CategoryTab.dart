@@ -41,7 +41,7 @@ class _CategoryTabState extends State<CategoryTab> {
                     children: [
                       Icon(widget.iconCategory),
                       Text(
-                        'Others',
+                        " ${widget.cat}",
                         style: GoogleFonts.quicksand(
                             color: Colors.grey,
                             fontSize: 13.5,

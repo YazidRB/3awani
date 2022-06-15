@@ -65,13 +65,16 @@ class _PostCardState extends State<PostCard> {
               padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16)
                   .copyWith(right: 0),
               child: Row(children: [
-                CircleAvatar(
-                  radius: 16,
-                  backgroundImage: widget.snap['profImage'] == null
-                      ? NetworkImage(
-                          'https://i1.sndcdn.com/avatars-000469982322-c5b8n9-t500x500.jpg')
-                      : NetworkImage(widget.snap['profImage']),
-                ),
+                widget.snap['profImage'] == null
+                    ? CircleAvatar(
+                        radius: 16,
+                        backgroundImage:
+                            AssetImage('assets/images/default-avatar.png'),
+                      )
+                    : CircleAvatar(
+                        radius: 16,
+                        backgroundImage: NetworkImage(widget.snap['profImage']),
+                      ),
                 Expanded(
                     child: Padding(
                   padding: const EdgeInsets.only(left: 8),

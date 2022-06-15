@@ -11,6 +11,8 @@ MERGED from [:firebase_core] C:\Users\Yazid RB\Documents\GitHub\3awani\build\fir
 MERGED from [:firebase_core] C:\Users\Yazid RB\Documents\GitHub\3awani\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
 MERGED from [:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
+MERGED from [:url_launcher_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\c15149140bcc27b70424f541b52a2f41\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\c15149140bcc27b70424f541b52a2f41\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [com.google.firebase:firebase-auth:21.0.3] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\f0329feb373d2ccf814ec3b7f075b5f6\jetified-firebase-auth-21.0.3\AndroidManifest.xml:26:5-71:19
@@ -55,6 +57,7 @@ MERGED from [:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\bu
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Yazid RB\Documents\GitHub\3awani\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:sqflite] C:\Users\Yazid RB\Documents\GitHub\3awani\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:fluttertoast] C:\Users\Yazid RB\Documents\GitHub\3awani\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [:path_provider_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\7562cd46fbf77d3dc7c30a2bb2af6214\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\c15149140bcc27b70424f541b52a2f41\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
@@ -139,6 +142,8 @@ MERGED from [:sqflite] C:\Users\Yazid RB\Documents\GitHub\3awani\build\sqflite\i
 MERGED from [:sqflite] C:\Users\Yazid RB\Documents\GitHub\3awani\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] C:\Users\Yazid RB\Documents\GitHub\3awani\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] C:\Users\Yazid RB\Documents\GitHub\3awani\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\7562cd46fbf77d3dc7c30a2bb2af6214\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
@@ -315,6 +320,14 @@ ADDED from [:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\bui
 		ADDED from [:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
 	android:name
 		ADDED from [:image_picker_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher_android] C:\Users\Yazid RB\Documents\GitHub\3awani\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\c15149140bcc27b70424f541b52a2f41\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 	android:required

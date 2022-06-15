@@ -57,7 +57,7 @@ class _HelpCategoriesState extends State<HelpCategories> {
           preferredSize: const Size.fromHeight(100), child: SignUpAppBar()),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Column(
+        child: ListView(
           children: [
             Text(
               'How can you help with now or in the future?',

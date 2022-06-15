@@ -1,5 +1,6 @@
 import 'package:aawani/resource/Globals.dart';
 import 'package:aawani/screens/Category/CategoryTab.dart';
+import 'package:aawani/screens/messages/ChatPage.dart';
 import 'package:aawani/widgets/PostCard.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,12 @@ class CategoryChose extends StatelessWidget {
           elevation: 0,
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChatPage()),
+                  );
+                },
                 icon: Icon(
                   Icons.send_rounded,
                   color: Colors.black,
@@ -33,17 +39,6 @@ class CategoryChose extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Text(
-                "What kind of category that \n you want to see ?",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.quicksand(
-                    color: Colors.grey,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,

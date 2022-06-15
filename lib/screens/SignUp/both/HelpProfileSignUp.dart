@@ -60,8 +60,8 @@ class _HelpProfileSignUpState extends State<HelpProfileSignUp> {
                     children: [
                       filee == null
                           ? CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                  'https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png'),
+                              backgroundImage: AssetImage(
+                                  'assets/images/default-avatar.png'),
                               radius: 50)
                           : CircleAvatar(
                               backgroundImage: MemoryImage(filee!),
@@ -160,12 +160,15 @@ class _HelpProfileSignUpState extends State<HelpProfileSignUp> {
                         .update({
                       'profImage': profImage,
                       'phone': phone,
-                      'realName': realName
+                      'realName': realName,
+                      'uid': auth.currentUser!.uid
                     });
 
                     globals.phone = phone;
                     globals.realName = realName;
-                    globals.profImage = profImage;
+                    globals.profImage = filee != null
+                        ? profImage
+                        : "assets/images/default-avatar.png";
 
                     Navigator.of(context)
                         .pushReplacementNamed('HelpCategories');

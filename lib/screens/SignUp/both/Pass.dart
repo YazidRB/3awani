@@ -20,7 +20,7 @@ class Pass extends StatelessWidget {
           preferredSize: const Size.fromHeight(100), child: SignUpAppBar()),
       body: Padding(
         padding: const EdgeInsets.all(40),
-        child: Column(
+        child: ListView(
           children: [
             Container(
               child: Text(

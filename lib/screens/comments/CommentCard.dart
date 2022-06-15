@@ -18,13 +18,16 @@ class _CommentCardState extends State<CommentCard> {
       padding: EdgeInsets.symmetric(horizontal: 14),
       child: Row(
         children: [
-          CircleAvatar(
-            backgroundImage: widget.snap['profilePic'] == null
-                ? NetworkImage(
-                    "https://i1.sndcdn.com/avatars-000469982322-c5b8n9-t500x500.jpg")
-                : NetworkImage(widget.snap['profilePic']!),
-            radius: 16,
-          ),
+          widget.snap['profilePic'] == null
+              ? CircleAvatar(
+                  backgroundImage:
+                      AssetImage("assets/images/default-avatar.png"),
+                  radius: 16,
+                )
+              : CircleAvatar(
+                  backgroundImage: NetworkImage(widget.snap['profilePic']!),
+                  radius: 16,
+                ),
           Expanded(
             child: Padding(
               padding: EdgeInsets.only(left: 16),

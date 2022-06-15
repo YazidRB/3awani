@@ -1,3 +1,5 @@
+import 'package:aawani/functions/FireStoreFunctions.dart';
+import 'package:aawani/screens/Login/Login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -53,9 +55,44 @@ class _ProfilePageState extends State<ProfilePage>
                             fontSize: 24,
                           )),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) => Dialog(
+                                  child: ListView(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 16),
+                                      shrinkWrap: true,
+                                      children: [
+                                    ListTile(
+                                      leading: Icon(Icons.exit_to_app_sharp),
+                                      title: Text("Sign out"),
+                                      onTap: () async {
+                                        await FireStoreFunctions().signOut();
+                                        Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(
+                                                builder: (context) => Login()));
+                                      },
+                                    ),
+                                    ListTile(
+                                      leading: Icon(
+                                        Icons.exit_to_app,
+                                        color: Colors.white,
+                                      ),
+                                      title: Text(
+                                        "Cancel",
+                                        style: TextStyle(
+                                            color: Color.fromARGB(
+                                                172, 244, 67, 54)),
+                                      ),
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    )
+                                  ])));
+                    },
                     icon: Icon(
-                      Icons.more_horiz,
+                      Icons.settings,
                       size: 30.0,
                     ),
                   ),
@@ -63,13 +100,16 @@ class _ProfilePageState extends State<ProfilePage>
               ),
             ),
             SizedBox(height: 70.0),
-            CircleAvatar(
-              backgroundImage: globals.profImage == null
-                  ? NetworkImage(
-                      'https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png')
-                  : NetworkImage(globals.profImage!),
-              radius: 70.0,
-            ),
+            globals.profImage == null
+                ? CircleAvatar(
+                    backgroundImage:
+                        AssetImage('assets/images/default-avatar.png'),
+                    radius: 70.0,
+                  )
+                : CircleAvatar(
+                    backgroundImage: NetworkImage(globals.profImage!),
+                    radius: 70.0,
+                  ),
             SizedBox(height: 20.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -234,43 +274,6 @@ class _ProfilePageState extends State<ProfilePage>
                   ],
                 ),
                 SizedBox(width: 20.0),
-              ],
-            ),
-            SizedBox(height: 60.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Help",
-                    style: TextStyle(fontSize: 18.0),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: Size(140.0, 55.0),
-                    primary: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 15.0),
-                OutlinedButton(
-                  onPressed: () {},
-                  child: Icon(Icons.mail_outline_outlined),
-                  style: OutlinedButton.styleFrom(
-                      primary: Colors.black,
-                      backgroundColor: Colors.black12,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      fixedSize: Size(50.0, 60.0)),
-                ),
-                SizedBox(width: 50.0),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.more_vert),
-                )
               ],
             ),
             SizedBox(height: 60.0),

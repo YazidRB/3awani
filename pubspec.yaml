@@ -41,12 +41,14 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  flutter_chat_ui: ^1.6.0
   flutter_svg: ^1.0.3
   flutter_swipable: ^1.2.1
   flutter_vector_icons: ^1.0.0
   fluttertoast: ^8.0.9
   google_fonts: ^2.3.1
   google_nav_bar: ^5.0.6
+  grouped_list: ^5.1.1
   image_picker: ^0.8.5
   intl: ^0.17.0
   like_button: ^2.0.4
@@ -74,6 +76,7 @@ flutter:
   assets:
     - lib\assets\tinder-2.svg
     - assets/images/
+    - assets/images/default-avatar.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

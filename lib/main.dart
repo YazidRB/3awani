@@ -1,4 +1,5 @@
 import 'package:aawani/screens/Login/Login.dart';
+import 'package:aawani/screens/Search/Search.dart';
 import 'package:aawani/screens/SignUp/Person/UserEmail.dart';
 import 'package:aawani/screens/SignUp/both/HelpCategories.dart';
 import 'package:aawani/screens/SignUp/both/HelpProfileSignUp.dart';
@@ -8,8 +9,8 @@ import 'package:aawani/screens/SignUp/both/Pass.dart';
 import 'package:aawani/screens/SignUp/both/UserHelpType.dart';
 import 'package:aawani/screens/SignUp/both/UserType.dart';
 import 'package:aawani/screens/SignUp/getStarted.dart';
-import 'package:aawani/screens/addPost/FeedPost.dart';
 import 'package:aawani/screens/home/MyHomePage.dart';
+import 'package:aawani/screens/messages/ChatPage.dart';
 import 'package:aawani/screens/profile/ProfilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';

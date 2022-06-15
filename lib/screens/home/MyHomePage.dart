@@ -1,7 +1,6 @@
 import 'package:aawani/resource/Colors.dart';
 import 'package:aawani/screens/Category/CategoryChose.dart';
 import 'package:aawani/screens/Search/Search.dart';
-import 'package:aawani/screens/addPost/FeedPost.dart';
 import 'package:aawani/screens/addPost/addPost.dart';
 import 'package:aawani/screens/profile/ProfilePage.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(4.0),
           child: GNav(
               rippleColor: Colors.grey[800]
                   as Color, // tab button ripple color when pressed
@@ -48,12 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               curve: Curves.easeOutExpo, // tab animation curves
               duration: Duration(milliseconds: 430), // tab animation duration
-              gap: 3, // the tab button gap between icon and text
+              gap: 2, // the tab button gap between icon and text
               color: Colors.grey[800], // unselected icon color
               activeColor: primaryColor, // selected icon and text color
-              iconSize: 20, // tab button icon size
+              iconSize: 17.4, // tab button icon size
               padding: EdgeInsets.symmetric(
-                  horizontal: 20, vertical: 5), // navigation bar padding
+                  horizontal: 4, vertical: 3), // navigation bar padding
               tabs: [
                 GButton(
                   icon: Icons.home_filled,

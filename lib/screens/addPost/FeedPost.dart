@@ -1,4 +1,5 @@
 import 'package:aawani/resource/Globals.dart';
+import 'package:aawani/screens/messages/ChatPage.dart';
 import 'package:aawani/widgets/PostCard.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,13 @@ class FeedPost extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back),
+          color: Colors.grey,
+        ),
         title: Text('${cat} Posts',
             style: GoogleFonts.quicksand(
                 color: Colors.green,
@@ -23,7 +31,12 @@ class FeedPost extends StatelessWidget {
         elevation: 0,
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChatPage()),
+                );
+              },
               icon: Icon(
                 Icons.send_rounded,
                 color: Colors.black,
