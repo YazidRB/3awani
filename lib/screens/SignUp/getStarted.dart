@@ -110,7 +110,7 @@ class SignUpAppBar extends StatelessWidget {
           children: [
             Container(
               child: SvgPicture.asset(
-                'lib\\assets\\tinder-2.svg',
+                'lib/icons/tinder-2.svg',
                 height: 35,
                 color: primaryColor,
               ),

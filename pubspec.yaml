@@ -42,15 +42,23 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_chat_ui: ^1.6.0
+  flutter_map: ^1.0.0
+  flutter_native_splash: ^2.2.3+1
+  flutter_osm_plugin: ^0.34.1+1
+  flutter_sms: ^2.3.3
   flutter_svg: ^1.0.3
   flutter_swipable: ^1.2.1
   flutter_vector_icons: ^1.0.0
   fluttertoast: ^8.0.9
+  geocoding: ^2.0.4
+  geolocator: ^8.2.1
   google_fonts: ^2.3.1
+  google_maps_flutter: ^2.1.8
   google_nav_bar: ^5.0.6
   grouped_list: ^5.1.1
   image_picker: ^0.8.5
   intl: ^0.17.0
+  latlong: ^0.6.1
   like_button: ^2.0.4
   provider: ^6.0.2
   sliding_clipped_nav_bar: ^3.1.0
@@ -61,6 +69,11 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/images/default-avatar.png"
+  android_graviry: center
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -74,7 +87,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib\assets\tinder-2.svg
+    - lib/icons/
     - assets/images/
     - assets/images/default-avatar.png
   #   - images/a_dot_ham.jpeg
@@ -90,7 +103,7 @@ flutter:
   fonts:
     - family: GothamRounded
       fonts:
-        - asset: lib\assets\GothamRounded-Medium.otf
+        - asset: lib\icons\GothamRounded-Medium.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

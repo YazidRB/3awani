@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:aawani/functions/FireStoreFunctions.dart';
 import 'package:aawani/resource/Colors.dart';
 import 'package:aawani/resource/Globals.dart' as globals;
+import 'package:aawani/screens/addPost/Place.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -26,40 +27,26 @@ class _AddPostState extends State<AddPost> {
     'drugs': false,
     'others': false
   };
-  File? _file;
   TextEditingController textEditingController = TextEditingController();
   bool _isLoading = false;
 
-  postImage(String uid, String username, String profImage,
-      Map<String, bool> category) async {
-    try {
-      String res = await FireStoreFunctions().uploadPost(
-          textEditingController.text,
-          _file!,
-          uid,
-          username,
-          profImage,
-          category);
+  clearCat() {
+    setState(() {
+      categories = {
+        'food': false,
+        'money ': false,
+        'clothes': false,
+        'physical': false,
+        'drugs': false,
+        'others': false
+      };
+    });
+  }
 
-      if (res == 'success') {
-        setState(() {
-          _isLoading = false;
-        });
-
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text('Posted !')));
-        clearImage();
-      } else {
-        setState(() {
-          _isLoading = false;
-        });
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text(res)));
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(e.toString())));
-    }
+  clearImage() {
+    setState(() {
+      globals.file = null;
+    });
   }
 
   selectImage(BuildContext context) async {
@@ -78,7 +65,7 @@ class _AddPostState extends State<AddPost> {
                       await ImagePicker().pickImage(source: ImageSource.camera);
 
                   setState(() {
-                    _file = File(xfile!.path);
+                    globals.file = File(xfile!.path);
                   });
                 },
               ),
@@ -90,7 +77,7 @@ class _AddPostState extends State<AddPost> {
                   final xfile = await ImagePicker()
                       .pickImage(source: ImageSource.gallery);
                   setState(() {
-                    _file = File(xfile!.path);
+                    globals.file = File(xfile!.path);
                   });
                 },
               ),
@@ -106,15 +93,9 @@ class _AddPostState extends State<AddPost> {
         });
   }
 
-  void clearImage() {
-    setState(() {
-      _file = null;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return _file == null
+    return globals.file == null
         ? Center(
             child: IconButton(
               onPressed: () => selectImage(context),
@@ -128,7 +109,10 @@ class _AddPostState extends State<AddPost> {
               backgroundColor: Colors.white,
               elevation: 0,
               leading: IconButton(
-                  onPressed: clearImage,
+                  onPressed: () {
+                    clearImage();
+                    clearCat();
+                  },
                   icon: Icon(
                     Icons.arrow_back,
                     color: Colors.grey,
@@ -137,14 +121,20 @@ class _AddPostState extends State<AddPost> {
               actions: [
                 TextButton(
                     onPressed: () async {
-                      await postImage(globals.uid!, globals.userName!,
-                          globals.profImage!, globals.categories);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Place(
+                                  category: categories,
+                                  text: textEditingController.text,
+                                )),
+                      );
                     },
-                    child: Text('Post',
+                    child: Text('Add location',
                         style: GoogleFonts.quicksand(
                             color: Colors.green,
                             fontWeight: FontWeight.bold,
-                            fontSize: 27)))
+                            fontSize: 16)))
               ],
             ),
             body: Padding(
@@ -154,6 +144,7 @@ class _AddPostState extends State<AddPost> {
                   _isLoading
                       ? const LinearProgressIndicator(
                           minHeight: 10,
+                          color: Colors.blue,
                         )
                       : const Padding(
                           padding: EdgeInsets.only(top: 0),
@@ -166,7 +157,7 @@ class _AddPostState extends State<AddPost> {
                         CircleAvatar(
                           backgroundImage: globals.profImage == null
                               ? NetworkImage(
-                                  'https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png')
+                                  'https://cdn-icons-png.flaticon.com/512/2017/2017701.png')
                               : NetworkImage(globals.profImage!),
                         ),
                         SizedBox(
@@ -186,7 +177,7 @@ class _AddPostState extends State<AddPost> {
                               aspectRatio: 487 / 451,
                               child: Container(
                                   child: Image(
-                                image: FileImage(_file!),
+                                image: FileImage(globals.file!),
                               ))),
                         ),
                         Divider(
@@ -194,19 +185,6 @@ class _AddPostState extends State<AddPost> {
                           thickness: 12,
                         ),
                       ]),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Center(
-                    child: Text(
-                      "What the category of what you need ?",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.quicksand(
-                          color: Colors.grey,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
 
                   Expanded(child: Container()),
                   // START

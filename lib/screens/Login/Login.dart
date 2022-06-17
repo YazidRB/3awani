@@ -1,9 +1,12 @@
 import 'package:aawani/resource/Colors.dart';
 import 'package:aawani/resource/Globals.dart' as globals;
+import 'package:aawani/screens/home/MyHomePage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:aawani/models/User.dart' as models;
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Login extends StatefulWidget {
   Login({Key? key}) : super(key: key);
@@ -13,12 +16,12 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  @override
+  final fsp = GlobalKey<FormState>();
+  final fsm = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    final fsp = GlobalKey<FormState>();
-    final fsm = GlobalKey<FormState>();
     String? password;
     String? email;
 
@@ -36,12 +39,8 @@ class _LoginState extends State<Login> {
       globals.realName = data['realName'];
       globals.userType = data['userType'];
       globals.userName = data['userName'];
-      globals.categories['food'] = data['categories']['food'];
-      globals.categories['money'] = data['categories']['money'];
-      globals.categories['clothes'] = data['categories']['clothes'];
-      globals.categories['physical'] = data['categories']['physical'];
-      globals.categories['drugs'] = data['categories']['drugs'];
-      globals.categories['others'] = data['categories']['others'];
+      globals.suc = data['suc'];
+      globals.sexe = data['sexe'];
       globals.profImage = data["profImage"] != null
           ? data["profImage"]
           : "assets/images/default-avatar.png";
@@ -53,23 +52,23 @@ class _LoginState extends State<Login> {
 
     return Scaffold(
       body: isLoading
-          ? Center(child: CircularProgressIndicator())
-          : Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+          ? Container(child: Center(child: CircularProgressIndicator()))
+          : ListView(
               children: <Widget>[
+                Expanded(child: Container()),
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  padding: EdgeInsets.symmetric(horizontal: 100, vertical: 30),
                   child: Text(
-                    "LOGIN",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: primaryColor,
-                        fontSize: 36),
-                    textAlign: TextAlign.left,
+                    "Login ",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.quicksand(
+                        fontSize: 36,
+                        color: Colors.green,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(height: size.height * 0.03),
+                SizedBox(height: size.height * 0.05),
                 Container(
                   alignment: Alignment.center,
                   margin: EdgeInsets.symmetric(horizontal: 40),
@@ -79,6 +78,7 @@ class _LoginState extends State<Login> {
                       onSaved: ((newValue) {
                         email = newValue;
                       }),
+                      keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(labelText: 'email'),
                     ),
                   ),
@@ -93,8 +93,8 @@ class _LoginState extends State<Login> {
                       onSaved: (newValue) {
                         password = newValue;
                       },
+                      keyboardType: TextInputType.text,
                       decoration: InputDecoration(labelText: "Password"),
-                      obscureText: true,
                     ),
                   ),
                 ),
@@ -102,11 +102,12 @@ class _LoginState extends State<Login> {
                   alignment: Alignment.centerRight,
                   margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                   child: Text(
-                    "Forgot your password?",
-                    style: TextStyle(
+                    "forgot password?",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.quicksand(
                         fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey),
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
                 SizedBox(height: size.height * 0.05),
@@ -114,47 +115,54 @@ class _LoginState extends State<Login> {
                   alignment: Alignment.centerRight,
                   margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                   child: ElevatedButton(
-                    onPressed: () async {
-                      fsp.currentState!.save();
-                      fsm.currentState!.save();
-                      try {
-                        setState(() {
-                          isLoading = true;
-                        });
-                        UserCredential userCredential = await FirebaseAuth
-                            .instance
-                            .signInWithEmailAndPassword(
-                                email: email!, password: password!);
+                      onPressed: () async {
+                        fsp.currentState!.save();
+                        fsm.currentState!.save();
 
-                        await getProfileData();
+                        try {
+                          setState(() {
+                            isLoading = true;
+                          });
+                          UserCredential userCredential = await FirebaseAuth
+                              .instance
+                              .signInWithEmailAndPassword(
+                                  email: email!, password: password!);
 
-                        Navigator.of(context).pushReplacementNamed('homePage');
-                      } on FirebaseAuthException catch (e) {
-                        if (e.code == 'user-not-found') {
-                          print('No user found for that email.');
-                        } else if (e.code == 'wrong-password') {
-                          print('Wrong password provided for that user.');
+                          await getProfileData();
+
+                          if (globals.suc == true) {
+                            Navigator.of(context).pushReplacementNamed('phone');
+                          } else {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MyHomePage()),
+                            );
+                          }
+                        } on FirebaseAuthException catch (e) {
+                          if (e.code == 'user-not-found') {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content:
+                                    Text('No user found for that email.')));
+                          } else if (e.code == 'wrong-password') {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text(
+                                    'Wrong password provided for that user')));
+                          }
                         }
-                      }
-                    },
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 50.0,
-                      width: size.width * 0.5,
-                      decoration: new BoxDecoration(
-                          borderRadius: BorderRadius.circular(80.0),
-                          gradient: new LinearGradient(
-                              colors: [primaryColor, primaryColor])),
-                      padding: const EdgeInsets.all(0),
-                      child: Text(
-                        "LOGIN",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
+                      },
+                      child: Container(
+                        child: Text(
+                          "Login",
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.quicksand(
+                              fontSize: 21,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      )),
                 ),
+                Spacer(),
                 Container(
                   alignment: Alignment.centerRight,
                   margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),

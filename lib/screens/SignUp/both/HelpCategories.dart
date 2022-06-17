@@ -16,38 +16,7 @@ class HelpCategories extends StatefulWidget {
   State<HelpCategories> createState() => _HelpCategoriesState();
 }
 
-Map<String, bool> categories = {
-  'food': false,
-  'money ': false,
-  'clothes': false,
-  'physical': false,
-  'drugs': false,
-  'others': false
-};
-
-getProfileData() async {
-  final snapshot = await FirebaseFirestore.instance
-      .collection('users')
-      .doc(FirebaseAuth.instance.currentUser!.uid)
-      .get();
-
-  Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
-  globals.uid = FirebaseAuth.instance.currentUser!.uid;
-  globals.email = FirebaseAuth.instance.currentUser!.email;
-  globals.phone = data['phone'];
-  globals.place = data['place'];
-  globals.realName = data['realName'];
-  globals.userType = data['userType'];
-  globals.userName = data['userName'];
-  globals.categories['food'] = data['categories']['food'];
-  globals.categories['money'] = data['categories']['money'];
-  globals.categories['clothes'] = data['categories']['clothes'];
-  globals.categories['physical'] = data['categories']['physical'];
-  globals.categories['drugs'] = data['categories']['drugs'];
-  globals.categories['others'] = data['categories']['others'];
-
-  globals.helpType = data['userType'];
-}
+Map<String, bool> sexe = {'men': false, 'women': false};
 
 class _HelpCategoriesState extends State<HelpCategories> {
   @override
@@ -57,10 +26,10 @@ class _HelpCategoriesState extends State<HelpCategories> {
           preferredSize: const Size.fromHeight(100), child: SignUpAppBar()),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: ListView(
+        child: Column(
           children: [
             Text(
-              'How can you help with now or in the future?',
+              'What is your sexe?',
               textAlign: TextAlign.center,
               style: GoogleFonts.quicksand(
                   color: Colors.grey,
@@ -74,16 +43,17 @@ class _HelpCategoriesState extends State<HelpCategories> {
                 Column(
                   children: [
                     LikeButton(
-                      isLiked: categories['food'],
+                      isLiked: sexe['men'],
                       onTap: (isLiked) async {
                         setState(() {
-                          if (!isLiked)
-                            categories['food'] = true;
-                          else
-                            categories['food'] = false;
+                          if (!isLiked) {
+                            sexe['men'] = true;
+                            sexe['women'] = false;
+                          } else
+                            sexe['men'] = false;
                         });
                       },
-                      size: 35,
+                      size: 60,
                       circleSize: 50,
                       circleColor:
                           CircleColor(start: Colors.grey, end: primaryColor),
@@ -93,14 +63,14 @@ class _HelpCategoriesState extends State<HelpCategories> {
                           dotSecondaryColor: Colors.grey),
                       likeBuilder: (bool isLiked) {
                         return Icon(
-                          Icons.fastfood_outlined,
+                          Icons.male,
                           color: isLiked ? primaryColor : Colors.grey,
                           size: 35,
                         );
                       },
                     ),
                     Text(
-                      'Food',
+                      'Men',
                       style: GoogleFonts.quicksand(
                           color: Colors.grey,
                           fontSize: 24,
@@ -111,16 +81,17 @@ class _HelpCategoriesState extends State<HelpCategories> {
                 Column(
                   children: [
                     LikeButton(
-                      isLiked: categories['money'],
+                      isLiked: sexe['women'],
                       onTap: (isLiked) async {
                         setState(() {
-                          if (!isLiked)
-                            categories['money'] = true;
-                          else
-                            categories['money'] = false;
+                          if (!isLiked) {
+                            sexe['women'] = true;
+                            sexe['men'] = false;
+                          } else
+                            sexe['women'] = false;
                         });
                       },
-                      size: 35,
+                      size: 60,
                       circleSize: 50,
                       circleColor:
                           CircleColor(start: Colors.grey, end: primaryColor),
@@ -130,178 +101,14 @@ class _HelpCategoriesState extends State<HelpCategories> {
                           dotSecondaryColor: Colors.grey),
                       likeBuilder: (bool isLiked) {
                         return Icon(
-                          Icons.attach_money_outlined,
+                          Icons.female,
                           color: isLiked ? primaryColor : Colors.grey,
                           size: 35,
                         );
                       },
                     ),
                     Text(
-                      'money',
-                      style: GoogleFonts.quicksand(
-                          color: Colors.grey,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    LikeButton(
-                      isLiked: categories['clothes'],
-                      onTap: (isLiked) async {
-                        setState(() {
-                          if (!isLiked)
-                            categories['clothes'] = true;
-                          else
-                            categories['clothes'] = false;
-                        });
-                      },
-                      size: 35,
-                      circleSize: 50,
-                      circleColor:
-                          CircleColor(start: Colors.grey, end: primaryColor),
-                      animationDuration: Duration(milliseconds: 300),
-                      bubblesColor: BubblesColor(
-                          dotPrimaryColor: primaryColor,
-                          dotSecondaryColor: Colors.grey),
-                      likeBuilder: (bool isLiked) {
-                        return Icon(
-                          Icons.checkroom,
-                          color: isLiked ? primaryColor : Colors.grey,
-                          size: 35,
-                        );
-                      },
-                    ),
-                    Text(
-                      'Clothes',
-                      style: GoogleFonts.quicksand(
-                          color: Colors.grey,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-                Column(
-                  children: [
-                    LikeButton(
-                      isLiked: categories['physical'],
-                      onTap: (isLiked) async {
-                        setState(() {
-                          if (!isLiked)
-                            categories['physical'] = true;
-                          else
-                            categories['physical'] = false;
-                        });
-                      },
-                      size: 35,
-                      circleSize: 50,
-                      circleColor:
-                          CircleColor(start: Colors.grey, end: primaryColor),
-                      animationDuration: Duration(milliseconds: 300),
-                      bubblesColor: BubblesColor(
-                          dotPrimaryColor: primaryColor,
-                          dotSecondaryColor: Colors.grey),
-                      likeBuilder: (bool isLiked) {
-                        return Icon(
-                          Icons.accessibility,
-                          color: isLiked ? primaryColor : Colors.grey,
-                          size: 35,
-                        );
-                      },
-                    ),
-                    Text(
-                      'Physical',
-                      style: GoogleFonts.quicksand(
-                          color: Colors.grey,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    LikeButton(
-                      isLiked: categories['drugs'],
-                      onTap: (isLiked) async {
-                        setState(() {
-                          if (!isLiked)
-                            categories['drugs'] = true;
-                          else
-                            categories['drugs'] = false;
-                        });
-                      },
-                      size: 35,
-                      circleSize: 50,
-                      circleColor:
-                          CircleColor(start: Colors.grey, end: primaryColor),
-                      animationDuration: Duration(milliseconds: 300),
-                      bubblesColor: BubblesColor(
-                          dotPrimaryColor: primaryColor,
-                          dotSecondaryColor: Colors.grey),
-                      likeBuilder: (bool isLiked) {
-                        return Icon(
-                          Icons.vaccines,
-                          color: isLiked ? primaryColor : Colors.grey,
-                          size: 35,
-                        );
-                      },
-                    ),
-                    Text(
-                      'Drugs',
-                      style: GoogleFonts.quicksand(
-                          color: Colors.grey,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-                Column(
-                  children: [
-                    LikeButton(
-                      isLiked: categories['others'],
-                      onTap: (isLiked) async {
-                        setState(() {
-                          if (!isLiked)
-                            categories['others'] = true;
-                          else
-                            categories['others'] = false;
-                        });
-                      },
-                      size: 35,
-                      circleSize: 50,
-                      circleColor:
-                          CircleColor(start: Colors.grey, end: primaryColor),
-                      animationDuration: Duration(milliseconds: 300),
-                      bubblesColor: BubblesColor(
-                          dotPrimaryColor: primaryColor,
-                          dotSecondaryColor: Colors.grey),
-                      likeBuilder: (bool isLiked) {
-                        return Icon(
-                          Icons.interests,
-                          color: isLiked ? primaryColor : Colors.grey,
-                          size: 35,
-                        );
-                      },
-                    ),
-                    Text(
-                      'Others',
+                      'Women',
                       style: GoogleFonts.quicksand(
                           color: Colors.grey,
                           fontSize: 24,
@@ -334,13 +141,13 @@ class _HelpCategoriesState extends State<HelpCategories> {
               height: 40,
               child: GredientButton(
                 onPressed: () async {
-                  FirebaseFirestore.instance
+                  await FirebaseFirestore.instance
                       .collection('users')
                       .doc(FirebaseAuth.instance.currentUser!.uid)
-                      .update({'categories': categories});
+                      .update({'sexe': sexe});
 
-                  await getProfileData();
-                  Navigator.of(context).pushReplacementNamed("homePage");
+                  Navigator.of(context)
+                      .pushReplacementNamed("HelpProfileSignUp");
                 },
                 splashColor: Color.fromARGB(255, 194, 193, 193),
                 colors: [

@@ -37,11 +37,8 @@ class FeedPost extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => ChatPage()),
                 );
               },
-              icon: Icon(
-                Icons.send_rounded,
-                color: Colors.black,
-                size: 32,
-              ))
+              icon:
+                  Image.asset('lib/assets/icons8-email-send-96(-xxxhdpi).png'))
         ],
       ),
       body: StreamBuilder(

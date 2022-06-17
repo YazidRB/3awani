@@ -85,7 +85,8 @@ class Pass extends StatelessWidget {
                           .doc(FirebaseAuth.instance.currentUser!.uid)
                           .set({
                         'userName': globals.userName,
-                        'userType': globals.userType
+                        'userType': globals.userType,
+                        'suc': globals.suc
                       });
 
                       Navigator.of(context)

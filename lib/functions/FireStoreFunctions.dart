@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -31,8 +30,15 @@ class FireStoreFunctions {
     return await snap.ref.getDownloadURL();
   }
 
-  Future<String> uploadPost(String description, File file, String uid,
-      String userName, String profImage, Map<String, bool> category) async {
+  Future<String> uploadPost(
+      String description,
+      File file,
+      String uid,
+      String userName,
+      String profImage,
+      Map<String, bool> category,
+      double lat,
+      double long) async {
     String res = 'Some erreur !';
     try {
       String photoUrl = await uploadImageToStorage('posts', file, true);
@@ -50,7 +56,9 @@ class FireStoreFunctions {
           profImage: profImage,
           down: [],
           up: [],
-          reports: []);
+          reports: [],
+          lat: lat,
+          long: long);
 
       firestore.collection('posts').doc(postID).set(post.toJson());
       res = 'success';

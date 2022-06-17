@@ -3,7 +3,7 @@ import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoryTab extends StatefulWidget {
-  IconData iconCategory;
+  String iconCategory;
   final cat;
   CategoryTab({Key? key, required this.cat, required this.iconCategory})
       : super(key: key);
@@ -39,7 +39,21 @@ class _CategoryTabState extends State<CategoryTab> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(widget.iconCategory),
+                      Image.asset(
+                        widget.iconCategory,
+                        width: 50,
+                        color: widget.cat == "money "
+                            ? Colors.green
+                            : widget.cat == "food"
+                                ? Colors.orange
+                                : widget.cat == "clothes"
+                                    ? Colors.blue
+                                    : widget.cat == "physical"
+                                        ? Colors.grey
+                                        : widget.cat == "drugs"
+                                            ? Colors.red
+                                            : null,
+                      ),
                       Text(
                         " ${widget.cat}",
                         style: GoogleFonts.quicksand(

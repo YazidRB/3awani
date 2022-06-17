@@ -12,7 +12,41 @@
          to allow setting breakpoints, to provide hot reload, etc.
     -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <queries>
+
+        <!-- Needs to be explicitly declared on Android R+ -->
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
 
     <application
         android:name="android.app.Application"
@@ -58,13 +92,13 @@
             android:directBootAware="true"
             android:exported="false" >
             <meta-data
+                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
                 android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
@@ -79,6 +113,11 @@
                 android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
+        <service
+            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location" />
 
         <provider
             android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
@@ -94,14 +133,6 @@
             android:name="io.flutter.plugins.urllauncher.WebViewActivity"
             android:exported="false"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-
-        <uses-library
-            android:name="androidx.window.extensions"
-            android:required="false" />
-        <uses-library
-            android:name="androidx.window.sidecar"
-            android:required="false" />
-
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
@@ -139,12 +170,26 @@
             </intent-filter>
         </activity>
 
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
+
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
             android:authorities="com.example.aawani.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.example.aawani.com.squareup.picasso"
+            android:exported="false" /> <!-- Needs to be explicitly declared on P+ -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
@@ -154,6 +199,18 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.example.aawani.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
     </application>
 
 </manifest>

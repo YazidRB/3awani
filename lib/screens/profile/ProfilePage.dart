@@ -1,5 +1,6 @@
 import 'package:aawani/functions/FireStoreFunctions.dart';
 import 'package:aawani/screens/Login/Login.dart';
+import 'package:aawani/screens/addPost/PostUrl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +66,21 @@ class _ProfilePageState extends State<ProfilePage>
                                       shrinkWrap: true,
                                       children: [
                                     ListTile(
+                                      leading: globals.suc
+                                          ? Icon(Icons.phonelink_lock_outlined)
+                                          : Icon(Icons.phone_iphone_rounded),
+                                      title: Text("Phone authentification"),
+                                      onTap: () async {
+                                        globals.suc = !globals.suc;
+
+                                        FirebaseFirestore.instance
+                                            .collection('users')
+                                            .doc(FirebaseAuth
+                                                .instance.currentUser!.uid)
+                                            .update({'suc': globals.suc});
+                                      },
+                                    ),
+                                    ListTile(
                                       leading: Icon(Icons.exit_to_app_sharp),
                                       title: Text("Sign out"),
                                       onTap: () async {
@@ -103,7 +119,7 @@ class _ProfilePageState extends State<ProfilePage>
             globals.profImage == null
                 ? CircleAvatar(
                     backgroundImage:
-                        AssetImage('assets/images/default-avatar.png'),
+                        AssetImage('assets\\images\\default-avatar.png'),
                     radius: 70.0,
                   )
                 : CircleAvatar(
@@ -198,73 +214,30 @@ class _ProfilePageState extends State<ProfilePage>
                 ),
                 Column(
                   children: [
-                    Row(
-                      children: [
-                        Icon(Icons.category,
-                            size: 38, color: Colors.black.withOpacity(0.3)),
-                        SizedBox(width: 15),
-                        Text(
-                          "Categories",
-                          style: GoogleFonts.quicksand(
-                              color: Colors.grey,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
+                    Text(
+                      "sexe",
+                      style: GoogleFonts.quicksand(
+                          color: Colors.grey,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w400),
                     ),
                     SizedBox(height: 15.0),
                     Row(
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: globals.categories['money']!
+                          child: globals.sexe['men'] == true
                               ? Icon(
-                                  Icons.attach_money_outlined,
+                                  Icons.male,
                                   color: Colors.green,
                                 )
                               : Text(''),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: globals.categories['clothes']!
+                          child: globals.sexe['women'] == true
                               ? Icon(
-                                  Icons.checkroom,
-                                  color: Colors.green,
-                                )
-                              : Text(''),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: globals.categories['food']!
-                              ? Icon(
-                                  Icons.fastfood_rounded,
-                                  color: Colors.green,
-                                )
-                              : Text(''),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: globals.categories['physical']!
-                              ? Icon(
-                                  Icons.accessibility,
-                                  color: Colors.green,
-                                )
-                              : Text(''),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: globals.categories['drugs']!
-                              ? Icon(
-                                  Icons.vaccines,
-                                  color: Colors.green,
-                                )
-                              : Text(''),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: globals.categories['others']!
-                              ? Icon(
-                                  Icons.interests,
+                                  Icons.female,
                                   color: Colors.green,
                                 )
                               : Text(''),
@@ -277,77 +250,57 @@ class _ProfilePageState extends State<ProfilePage>
               ],
             ),
             SizedBox(height: 60.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                TabBar(
-                  isScrollable: true,
-                  controller: tabController,
-                  indicator: BoxDecoration(borderRadius: BorderRadius.zero),
-                  labelColor: Colors.black,
-                  labelStyle:
-                      TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
-                  unselectedLabelColor: Colors.black26,
-                  onTap: (tapIndex) {
-                    setState(() {
-                      selectedIndex = tapIndex;
-                    });
-                  },
-                  labelPadding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * 0.1),
-                  tabs: [
-                    Tab(
-                        icon: Icon(
-                      Icons.hail_rounded,
-                      size: 40,
-                    )),
-                    Tab(
-                        icon: Icon(
-                      Icons.add_business_sharp,
-                      size: 40,
-                    )),
-                    Tab(
-                      icon: Icon(
-                        Icons.info_outline,
-                        size: 40,
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-            SizedBox(height: 10.0),
             Container(
               height: (itemCount / 3).ceil() * 250 + 50,
-              child: TabBarView(
-                controller: tabController,
-                children: [
-                  GridView.builder(
+              child: StreamBuilder(
+                stream: FirebaseFirestore.instance
+                    .collection("posts")
+                    .where('uid', isEqualTo: globals.uid)
+                    .snapshots(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>>
+                        snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator();
+                  }
+                  return GridView.builder(
                     physics: NeverScrollableScrollPhysics(),
+                    itemCount: snapshot.data!.docs
+                        .where(
+                            (element) => element.data()['uid'] == globals.uid)
+                        .length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        mainAxisExtent: 250.0, crossAxisCount: 3),
+                        mainAxisExtent: 150.0, crossAxisCount: 3),
                     itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(20.0),
+                      return Container(
+                        margin: const EdgeInsets.all(5.0),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PostUrl(
+                                        postId: snapshot.data!.docs[index]
+                                            .data()['postID'],
+                                      )),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(snapshot.data!.docs[index]
+                                      .data()['postUrl'])),
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
                           ),
                         ),
                       );
                     },
-                    itemCount: itemCount,
-                  ),
-                  Center(
-                    child: Text("You don't have any videos"),
-                  ),
-                  Center(
-                    child: Text("You don't have any tagged"),
-                  ),
-                ],
+                  );
+                },
               ),
-            )
+            ),
           ],
         ),
       ),

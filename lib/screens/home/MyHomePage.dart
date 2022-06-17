@@ -1,5 +1,6 @@
 import 'package:aawani/resource/Colors.dart';
 import 'package:aawani/screens/Category/CategoryChose.dart';
+import 'package:aawani/screens/Maps/MapsCard.dart';
 import 'package:aawani/screens/Search/Search.dart';
 import 'package:aawani/screens/addPost/addPost.dart';
 import 'package:aawani/screens/profile/ProfilePage.dart';
@@ -21,7 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int page = 0;
   List<Widget> listWidget = [
     CategoryChose(),
-    Text('explore'),
+    MapsCard(),
     AddPost(),
     Search(),
     ProfilePage()

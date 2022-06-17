@@ -30,11 +30,8 @@ class CategoryChose extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => ChatPage()),
                   );
                 },
-                icon: Icon(
-                  Icons.send_rounded,
-                  color: Colors.black,
-                  size: 32,
-                ))
+                icon:
+                    Image.asset('lib/icons/icons8-email-send-96(-xxxhdpi).png'))
           ],
         ),
         body: Column(
@@ -44,25 +41,27 @@ class CategoryChose extends StatelessWidget {
                 crossAxisCount: 2,
                 children: [
                   CategoryTab(
-                      iconCategory: Icons.fastfood_outlined, cat: "food"),
+                      iconCategory:
+                          'lib/icons/icons8-hamburger-96(-xxxhdpi).png',
+                      cat: "food"),
                   CategoryTab(
-                    iconCategory: Icons.money,
+                    iconCategory: 'lib/icons/icons8-money-96(-xxxhdpi).png',
                     cat: "money ",
                   ),
                   CategoryTab(
-                    iconCategory: Icons.checkroom,
+                    iconCategory: 'lib/icons/icons8-clothes-64.png',
                     cat: "clothes",
                   ),
                   CategoryTab(
-                    iconCategory: Icons.accessibility,
+                    iconCategory: 'lib/icons/icons8-teenager-male-100.png',
                     cat: "physical",
                   ),
                   CategoryTab(
-                    iconCategory: Icons.vaccines,
+                    iconCategory: 'lib/icons/icons8-drugs-64.png',
                     cat: "drugs",
                   ),
                   CategoryTab(
-                    iconCategory: Icons.interests,
+                    iconCategory: 'lib/icons/icons8-categorize-48.png',
                     cat: "others",
                   )
                 ],

@@ -1,4 +1,5 @@
 import 'package:aawani/resource/Colors.dart';
+import 'package:aawani/screens/SignUp/both/HelpCategories.dart';
 import 'package:aawani/screens/SignUp/getStarted.dart';
 import 'package:aawani/widgets/GredientButton.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -156,8 +157,10 @@ class _UserHelpTypeState extends State<UserHelpType> {
                         .update({'helpType': 'needHelp'});
                     globals.helpType = 'needHelp';
 
-                    Navigator.of(context)
-                        .pushReplacementNamed("HelpProfileSignUp");
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HelpCategories()));
                   }
                 },
                 splashColor: Color.fromARGB(255, 194, 193, 193),

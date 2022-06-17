@@ -170,8 +170,8 @@ class _HelpProfileSignUpState extends State<HelpProfileSignUp> {
                         ? profImage
                         : "assets/images/default-avatar.png";
 
-                    Navigator.of(context)
-                        .pushReplacementNamed('HelpCategories');
+                    await getProfileData();
+                    Navigator.of(context).pushNamed('phone');
                   }
                 },
                 splashColor: Color.fromARGB(255, 0, 0, 0),
@@ -252,5 +252,25 @@ class _HelpProfileSignUpState extends State<HelpProfileSignUp> {
 
   chang(XFile xFile) async {
     return await File(xfile!.path).readAsBytes();
+  }
+
+  getProfileData() async {
+    final snapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .get();
+
+    Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
+    globals.uid = FirebaseAuth.instance.currentUser!.uid;
+    globals.email = FirebaseAuth.instance.currentUser!.email;
+    globals.phone = data['phone'];
+    globals.place = data['place'];
+    globals.realName = data['realName'];
+    globals.userType = data['userType'];
+    globals.userName = data['userName'];
+    globals.sexe['men'] = data['sexe']['men'];
+    globals.sexe['women'] = data['sexe']['women'];
+
+    globals.helpType = data['userType'];
   }
 }
