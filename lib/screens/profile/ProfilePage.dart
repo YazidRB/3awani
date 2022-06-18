@@ -69,7 +69,10 @@ class _ProfilePageState extends State<ProfilePage>
                                       leading: globals.suc
                                           ? Icon(Icons.phonelink_lock_outlined)
                                           : Icon(Icons.phone_iphone_rounded),
-                                      title: Text("Phone authentification"),
+                                      title: globals.suc
+                                          ? Text("Phone authentification : ON")
+                                          : Text(
+                                              "Phone authentification : OFF"),
                                       onTap: () async {
                                         globals.suc = !globals.suc;
 
@@ -78,6 +81,7 @@ class _ProfilePageState extends State<ProfilePage>
                                             .doc(FirebaseAuth
                                                 .instance.currentUser!.uid)
                                             .update({'suc': globals.suc});
+                                        Navigator.of(context).pop();
                                       },
                                     ),
                                     ListTile(
@@ -116,140 +120,142 @@ class _ProfilePageState extends State<ProfilePage>
               ),
             ),
             SizedBox(height: 70.0),
-            globals.profImage == null
-                ? CircleAvatar(
-                    backgroundImage:
-                        AssetImage('assets\\images\\default-avatar.png'),
-                    radius: 70.0,
-                  )
-                : CircleAvatar(
-                    backgroundImage: NetworkImage(globals.profImage!),
-                    radius: 70.0,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(children: [
+                  globals.profImage == null
+                      ? CircleAvatar(
+                          backgroundImage:
+                              AssetImage('lib/icons/default-avatar.png'),
+                          radius: 70.0,
+                        )
+                      : CircleAvatar(
+                          backgroundImage: NetworkImage(globals.profImage!),
+                          radius: 70.0,
+                        ),
+                  SizedBox(
+                    height: 7,
                   ),
-            SizedBox(height: 20.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "@${globals.userName}",
-                  style: GoogleFonts.quicksand(
-                      color: Colors.black,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: 13,
-                ),
-                globals.helpType == 'needHelp'
-                    ? Icon(
-                        Icons.hail_rounded,
-                        size: 50,
-                        color: Colors.red,
-                      )
-                    : Icon(
-                        Icons.volunteer_activism_sharp,
-                        size: 40,
-                        color: Colors.green,
-                      )
-              ],
-            ),
-            SizedBox(height: 100.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(width: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "${globals.userName}",
+                        style: GoogleFonts.quicksand(
+                            color: Colors.black,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      SizedBox(
+                        width: 13,
+                      ),
+                      globals.helpType != 'needHelp'
+                          ? Icon(
+                              Icons.back_hand,
+                              size: 25,
+                              color: Colors.red,
+                            )
+                          : Icon(
+                              Icons.volunteer_activism_sharp,
+                              size: 25,
+                              color: Colors.green,
+                            )
+                    ],
+                  ),
+                ]),
                 Column(
                   children: [
-                    Row(
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(Icons.phone,
-                            size: 32, color: Colors.black.withOpacity(0.3)),
+                        SizedBox(width: 20.0),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.phone,
+                                    size: 22,
+                                    color: Colors.black.withOpacity(0.3)),
+                                SizedBox(
+                                  width: 7,
+                                ),
+                                Text(
+                                  "Number",
+                                  style: GoogleFonts.quicksand(
+                                      color: Colors.grey,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 5.0),
+                            Text(
+                              globals.phone!,
+                              style: GoogleFonts.quicksand(
+                                  color: Colors.black,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
                         SizedBox(
-                          width: 15,
+                          height: 30,
                         ),
-                        Text(
-                          "Number",
-                          style: GoogleFonts.quicksand(
-                              color: Colors.grey,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w400),
+                        Column(
+                          children: [
+                            Text(
+                              "sexe",
+                              style: GoogleFonts.quicksand(
+                                  color: Colors.grey,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            SizedBox(height: 5.0),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 4),
+                                  child: globals.sexe['men'] == true
+                                      ? Icon(
+                                          Icons.male,
+                                          color: Colors.green,
+                                        )
+                                      : Text(''),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 4),
+                                  child: globals.sexe['women'] == true
+                                      ? Icon(
+                                          Icons.female,
+                                          color: Colors.green,
+                                        )
+                                      : Text(''),
+                                ),
+                              ],
+                            )
+                          ],
                         ),
+                        SizedBox(width: 20.0),
                       ],
-                    ),
-                    SizedBox(height: 15.0),
-                    Text(
-                      globals.phone!,
-                      style: GoogleFonts.quicksand(
-                          color: Colors.black,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(Icons.hail_rounded,
-                            size: 38, color: Colors.black.withOpacity(0.3)),
-                        SizedBox(width: 15),
-                        Text(
-                          "Needs",
-                          style: GoogleFonts.quicksand(
-                              color: Colors.grey,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 15),
-                    Text(
-                      "2",
-                      style: GoogleFonts.quicksand(
-                          color: Colors.black,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text(
-                      "sexe",
-                      style: GoogleFonts.quicksand(
-                          color: Colors.grey,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(height: 15.0),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: globals.sexe['men'] == true
-                              ? Icon(
-                                  Icons.male,
-                                  color: Colors.green,
-                                )
-                              : Text(''),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: globals.sexe['women'] == true
-                              ? Icon(
-                                  Icons.female,
-                                  color: Colors.green,
-                                )
-                              : Text(''),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(width: 20.0),
               ],
             ),
             SizedBox(height: 60.0),
+            Center(
+              child: Text(
+                "Your Posts",
+                style: GoogleFonts.quicksand(
+                    color: Colors.grey,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+            SizedBox(height: 20.0),
             Container(
               height: (itemCount / 3).ceil() * 250 + 50,
               child: StreamBuilder(

@@ -47,11 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
               curve: Curves.easeOutExpo, // tab animation curves
-              duration: Duration(milliseconds: 430), // tab animation duration
-              gap: 2, // the tab button gap between icon and text
+              duration: Duration(milliseconds: 200), // tab animation duration
+              gap: 0.5, // the tab button gap between icon and text
               color: Colors.grey[800], // unselected icon color
               activeColor: primaryColor, // selected icon and text color
-              iconSize: 17.4, // tab button icon size
+              iconSize: 22, // tab button icon size
               padding: EdgeInsets.symmetric(
                   horizontal: 4, vertical: 3), // navigation bar padding
               tabs: [
@@ -65,14 +65,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
                 GButton(
-                  icon: Icons.map_rounded,
+                  icon: Icons.map_outlined,
                   text: 'Map',
                   onPressed: () {
                     page = 1;
                   },
                 ),
                 GButton(
-                  icon: Icons.add_circle_outline_outlined,
+                  icon: Icons.add,
                   text: 'Add Post',
                 ),
                 GButton(

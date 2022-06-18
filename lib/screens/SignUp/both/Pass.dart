@@ -16,21 +16,13 @@ class Pass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(100), child: SignUpAppBar()),
       body: Padding(
-        padding: const EdgeInsets.all(40),
-        child: ListView(
+        padding: const EdgeInsets.all(20),
+        child: Column(
           children: [
-            Container(
-              child: Text(
-                'Please make a Strong Password!',
-                style: GoogleFonts.quicksand(fontSize: 34),
-              ),
-            ),
-            SizedBox(
-              height: 60,
-            ),
             Form(
               key: fs,
               child: TextFormField(
@@ -50,6 +42,15 @@ class Pass extends StatelessWidget {
                 decoration: InputDecoration(
                     hintText: 'Your Password',
                     hintStyle: GoogleFonts.quicksand(fontSize: 21)),
+              ),
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            Container(
+              child: Text(
+                'Make a Strong Password!',
+                style: GoogleFonts.quicksand(fontSize: 34),
               ),
             ),
             Expanded(child: Container()),

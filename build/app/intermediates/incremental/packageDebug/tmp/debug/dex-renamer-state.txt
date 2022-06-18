@@ -1,4 +1,4 @@
-#Fri Jun 17 15:45:44 BST 2022
+#Sat Jun 18 17:01:56 BST 2022
 path.4=classes_0.dex
 path.3=classes3.dex
 path.2=classes2.dex
@@ -19,7 +19,6 @@ base.8=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediate
 base.7=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_11.dex
 base.6=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_10.dex
 base.5=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_1.dex
-renamed.20=classes21.dex
 renamed.18=classes19.dex
 renamed.17=classes18.dex
 renamed.9=classes10.dex
@@ -39,9 +38,8 @@ base.15=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediat
 base.14=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_3.dex
 base.19=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_8.dex
 base.18=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_7.dex
-base.20=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_9.dex
 renamed.3=classes4.dex
-path.12=classes_16.dex
+path.12=classes_9.dex
 renamed.2=classes3.dex
 path.13=classes_2.dex
 renamed.1=classes2.dex
@@ -58,7 +56,6 @@ renamed.4=classes5.dex
 path.15=classes_4.dex
 renamed.19=classes20.dex
 base.13=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_2.dex
-base.12=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_16.dex
-path.20=classes_9.dex
+base.12=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_9.dex
 base.11=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_15.dex
 base.10=C\:\\Users\\Yazid RB\\Documents\\GitHub\\3awani\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\classes_14.dex

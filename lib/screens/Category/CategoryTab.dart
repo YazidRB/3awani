@@ -15,18 +15,26 @@ class _CategoryTabState extends State<CategoryTab> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.all(6.0),
+        padding: const EdgeInsets.all(20.0),
         child: Stack(
           children: [
             Container(
               decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      blurRadius: 4,
+                      offset: Offset(4, 8), // Shadow position
+                    ),
+                  ],
                   border: Border.all(),
                   borderRadius: BorderRadius.all(Radius.circular(15))),
             ),
             Container(
+              color: Colors.white,
               margin: EdgeInsets.all(5),
               child: InkWell(
-                focusColor: Colors.green,
                 onTap: () {
                   Navigator.push(
                     context,

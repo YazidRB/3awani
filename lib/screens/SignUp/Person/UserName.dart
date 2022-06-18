@@ -10,32 +10,24 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class UserName extends StatelessWidget {
-  @override
+  String usernamee = "";
   final fs = GlobalKey<FormState>();
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(100), child: SignUpAppBar()),
+          preferredSize: const Size.fromHeight(40), child: SignUpAppBar()),
       body: Padding(
         padding: const EdgeInsets.all(40),
         child: Column(
           children: [
-            Container(
-              child: Text(
-                'Chose a unique name',
-                style: GoogleFonts.quicksand(fontSize: 34),
-              ),
-            ),
-            SizedBox(
-              height: 60,
-            ),
             Form(
               key: fs,
               child: TextFormField(
                 onSaved: (newValue) {
-                  globals.userName = newValue!;
+                  usernamee = newValue!;
                 },
                 validator: (val) {
                   if (val == null) return 'you need to enter the name';
@@ -48,6 +40,15 @@ class UserName extends StatelessWidget {
                 decoration: InputDecoration(
                     hintText: 'Your Name',
                     hintStyle: GoogleFonts.quicksand(fontSize: 21)),
+              ),
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            Container(
+              child: Text(
+                'Chose a unique name',
+                style: GoogleFonts.quicksand(fontSize: 34),
               ),
             ),
             Expanded(child: Container()),
@@ -73,9 +74,32 @@ class UserName extends StatelessWidget {
               child: GredientButton(
                 onPressed: () async {
                   if (fs.currentState!.validate()) {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        });
                     fs.currentState!.save();
-
-                    Navigator.of(context).pushReplacementNamed('UserEmail');
+                    final snap = await FirebaseFirestore.instance
+                        .collection("users")
+                        .get();
+                    final docs = snap.docs;
+                    bool valid = true;
+                    for (var user in docs) {
+                      if (user.data()['userName'] == usernamee) {
+                        valid = false;
+                      }
+                    }
+                    Navigator.of(context).pop();
+                    if (valid) {
+                      globals.userName = usernamee;
+                      Navigator.of(context).pushReplacementNamed('UserEmail');
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text('this name is allrady exist ! ')));
+                    }
                   }
                 },
                 splashColor: Color.fromARGB(255, 194, 193, 193),

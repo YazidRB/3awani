@@ -12,13 +12,13 @@ class GetStarted extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(100), child: SignUpAppBar()),
+          preferredSize: const Size.fromHeight(40), child: SignUpAppBar()),
       body: Padding(
         padding: const EdgeInsets.all(40),
         child: Column(
           children: [
             Expanded(
-              flex: 4,
+              flex: 2,
               child: Center(
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -37,7 +37,7 @@ class GetStarted extends StatelessWidget {
                   children: [
                     Center(
                         child: Text(
-                      'Welcome To aawani ',
+                      'aawani ',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.quicksand(
                           color: Color.fromARGB(255, 22, 22, 22),
@@ -61,7 +61,7 @@ class GetStarted extends StatelessWidget {
             ),
             Container(
               width: MediaQuery.of(context).size.width * 0.32,
-              padding: EdgeInsets.symmetric(vertical: 43),
+              padding: EdgeInsets.symmetric(vertical: 20),
               child: GredientButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacementNamed('UserType');
@@ -103,31 +103,16 @@ class SignUpAppBar extends StatelessWidget {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
+      centerTitle: true,
       title: Container(
-        margin: const EdgeInsets.only(top: 21),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              child: SvgPicture.asset(
-                'lib/icons/tinder-2.svg',
-                height: 35,
-                color: primaryColor,
-              ),
+          margin: const EdgeInsets.only(top: 21),
+          child: Container(
+            child: Text(
+              'Aawani',
+              style: GoogleFonts.quicksand(
+                  color: primaryColor, fontWeight: FontWeight.w800),
             ),
-            SizedBox(
-              width: 15,
-            ),
-            Container(
-              child: Text(
-                'Aawani',
-                style: GoogleFonts.quicksand(
-                    color: primaryColor, fontWeight: FontWeight.w800),
-              ),
-            )
-          ],
-        ),
-      ),
+          )),
     );
   }
 }

@@ -90,7 +90,7 @@
 53-->[androidx.core:core:1.7.0] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\b478a999c0f86964024311fceae65383\core-1.7.0\AndroidManifest.xml:24:18-86
 54        android:debuggable="true"
 55        android:icon="@mipmap/ic_launcher"
-56        android:label="aawani" >
+56        android:label="Aawani" >
 57        <activity
 58            android:name="com.example.aawani.MainActivity"
 59            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

@@ -16,21 +16,13 @@ class UserEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(100), child: SignUpAppBar()),
       body: Padding(
         padding: const EdgeInsets.all(40),
         child: Column(
           children: [
-            Container(
-              child: Text(
-                'Please your email?',
-                style: GoogleFonts.quicksand(fontSize: 34),
-              ),
-            ),
-            SizedBox(
-              height: 60,
-            ),
             Form(
               key: fs,
               child: TextFormField(
@@ -51,6 +43,15 @@ class UserEmail extends StatelessWidget {
                 decoration: InputDecoration(
                     hintText: 'Your Email',
                     hintStyle: GoogleFonts.quicksand(fontSize: 21)),
+              ),
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            Container(
+              child: Text(
+                'Please your email?',
+                style: GoogleFonts.quicksand(fontSize: 34),
               ),
             ),
             Expanded(child: Container()),

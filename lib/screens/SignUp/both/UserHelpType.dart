@@ -30,7 +30,7 @@ class _UserHelpTypeState extends State<UserHelpType> {
         child: Column(
           children: [
             Text(
-              'Why you are here ?',
+              'you here for ..',
               style: GoogleFonts.quicksand(
                   color: Colors.grey,
                   fontSize: 28,
@@ -53,8 +53,8 @@ class _UserHelpTypeState extends State<UserHelpType> {
                           }
                         });
                       },
-                      size: 100,
-                      circleSize: 100,
+                      size: 80,
+                      circleSize: 80,
                       isLiked: help,
                       circleColor:
                           CircleColor(start: Colors.grey, end: primaryColor),
@@ -65,15 +65,15 @@ class _UserHelpTypeState extends State<UserHelpType> {
                         return Icon(
                           Icons.volunteer_activism_sharp,
                           color: isLiked ? primaryColor : Colors.grey,
-                          size: 80,
+                          size: 60,
                         );
                       },
                     ),
                     Text(
-                      'Help people',
+                      'Help',
                       style: GoogleFonts.quicksand(
                           color: Colors.grey,
-                          fontSize: 18,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold),
                     )
                   ],
@@ -91,8 +91,8 @@ class _UserHelpTypeState extends State<UserHelpType> {
                           }
                         });
                       },
-                      size: 100,
-                      circleSize: 100,
+                      size: 80,
+                      circleSize: 80,
                       isLiked: needHelp,
                       circleColor:
                           CircleColor(start: Colors.grey, end: primaryColor),
@@ -103,7 +103,7 @@ class _UserHelpTypeState extends State<UserHelpType> {
                         return Icon(
                           Icons.back_hand,
                           color: isLiked ? red : Colors.grey,
-                          size: 75,
+                          size: 60,
                         );
                       },
                     ),
@@ -111,7 +111,7 @@ class _UserHelpTypeState extends State<UserHelpType> {
                       'need help',
                       style: GoogleFonts.quicksand(
                           color: Colors.grey,
-                          fontSize: 18,
+                          fontSize: 14,
                           fontWeight: FontWeight.bold),
                     )
                   ],
@@ -147,8 +147,10 @@ class _UserHelpTypeState extends State<UserHelpType> {
                         .doc(FirebaseAuth.instance.currentUser!.uid)
                         .update({'helpType': 'help'});
                     globals.helpType = 'help';
-                    Navigator.of(context)
-                        .pushReplacementNamed("HelpProfileSignUp");
+                     Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HelpCategories()));
                   }
                   if (needHelp) {
                     FirebaseFirestore.instance

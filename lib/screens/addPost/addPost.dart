@@ -185,8 +185,6 @@ class _AddPostState extends State<AddPost> {
                           thickness: 12,
                         ),
                       ]),
-
-                  Expanded(child: Container()),
                   // START
 
                   Container(
@@ -214,10 +212,9 @@ class _AddPostState extends State<AddPost> {
                                   dotPrimaryColor: primaryColor,
                                   dotSecondaryColor: Colors.grey),
                               likeBuilder: (bool isLiked) {
-                                return Icon(
-                                  Icons.fastfood_outlined,
-                                  color: isLiked ? primaryColor : Colors.grey,
-                                  size: 27,
+                                return Image.asset(
+                                  'lib/icons/icons8-hamburger-96(-xxxhdpi).png',
+                                  color: isLiked ? Colors.orange : Colors.grey,
                                 );
                               },
                             ),
@@ -251,10 +248,9 @@ class _AddPostState extends State<AddPost> {
                                   dotPrimaryColor: primaryColor,
                                   dotSecondaryColor: Colors.grey),
                               likeBuilder: (bool isLiked) {
-                                return Icon(
-                                  Icons.money,
-                                  color: isLiked ? primaryColor : Colors.grey,
-                                  size: 27,
+                                return Image.asset(
+                                  'lib/icons/icons8-money-96(-xxxhdpi).png',
+                                  color: isLiked ? Colors.green : Colors.grey,
                                 );
                               },
                             ),
@@ -297,10 +293,9 @@ class _AddPostState extends State<AddPost> {
                                 dotPrimaryColor: primaryColor,
                                 dotSecondaryColor: Colors.grey),
                             likeBuilder: (bool isLiked) {
-                              return Icon(
-                                Icons.checkroom,
-                                color: isLiked ? primaryColor : Colors.grey,
-                                size: 27,
+                              return Image.asset(
+                                'lib/icons/icons8-clothes-64.png',
+                                color: isLiked ? Colors.blue : Colors.grey,
                               );
                             },
                           ),
@@ -334,10 +329,9 @@ class _AddPostState extends State<AddPost> {
                                 dotPrimaryColor: primaryColor,
                                 dotSecondaryColor: Colors.grey),
                             likeBuilder: (bool isLiked) {
-                              return Icon(
-                                Icons.accessibility,
-                                color: isLiked ? primaryColor : Colors.grey,
-                                size: 27,
+                              return Image.asset(
+                                'lib/icons/icons8-teenager-male-100.png',
+                                color: isLiked ? Colors.yellow : Colors.grey,
                               );
                             },
                           ),
@@ -379,10 +373,9 @@ class _AddPostState extends State<AddPost> {
                                 dotPrimaryColor: primaryColor,
                                 dotSecondaryColor: Colors.grey),
                             likeBuilder: (bool isLiked) {
-                              return Icon(
-                                Icons.vaccines,
-                                color: isLiked ? primaryColor : Colors.grey,
-                                size: 27,
+                              return Image.asset(
+                                'lib/icons/icons8-drugs-64.png',
+                                color: isLiked ? Colors.red : Colors.grey,
                               );
                             },
                           ),
@@ -416,10 +409,9 @@ class _AddPostState extends State<AddPost> {
                                 dotPrimaryColor: primaryColor,
                                 dotSecondaryColor: Colors.grey),
                             likeBuilder: (bool isLiked) {
-                              return Icon(
-                                Icons.interests,
-                                color: isLiked ? primaryColor : Colors.grey,
-                                size: 27,
+                              return Image.asset(
+                                'lib/icons/icons8-categorize-48.png',
+                                color: isLiked ? null : Colors.grey,
                               );
                             },
                           ),

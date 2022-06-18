@@ -87,7 +87,6 @@ MERGED from [:flutter_native_splash] C:\Users\Yazid RB\Documents\GitHub\3awani\b
 MERGED from [:geocoding] C:\Users\Yazid RB\Documents\GitHub\3awani\build\geocoding\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:fluttertoast] C:\Users\Yazid RB\Documents\GitHub\3awani\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:permission_handler] C:\Users\Yazid RB\Documents\GitHub\3awani\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_sms] C:\Users\Yazid RB\Documents\GitHub\3awani\build\flutter_sms\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\7562cd46fbf77d3dc7c30a2bb2af6214\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.preference:preference-ktx:1.2.0] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\2039aa2850038c766a40729e0777c0e6\jetified-preference-ktx-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.preference:preference:1.2.0] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\05db3917831642467f2312b67c2f239e\preference-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -243,8 +242,6 @@ MERGED from [:fluttertoast] C:\Users\Yazid RB\Documents\GitHub\3awani\build\flut
 MERGED from [:fluttertoast] C:\Users\Yazid RB\Documents\GitHub\3awani\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:permission_handler] C:\Users\Yazid RB\Documents\GitHub\3awani\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:permission_handler] C:\Users\Yazid RB\Documents\GitHub\3awani\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_sms] C:\Users\Yazid RB\Documents\GitHub\3awani\build\flutter_sms\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_sms] C:\Users\Yazid RB\Documents\GitHub\3awani\build\flutter_sms\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\7562cd46fbf77d3dc7c30a2bb2af6214\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\7562cd46fbf77d3dc7c30a2bb2af6214\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.preference:preference-ktx:1.2.0] C:\Users\Yazid RB\.gradle\caches\transforms-2\files-2.1\2039aa2850038c766a40729e0777c0e6\jetified-preference-ktx-1.2.0\AndroidManifest.xml:20:5-22:41

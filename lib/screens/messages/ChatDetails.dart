@@ -4,7 +4,6 @@ import 'package:aawani/screens/SignUp/Person/UserName.dart';
 import 'package:aawani/screens/messages/Messages.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:grouped_list/sliver_grouped_list.dart';
 import 'package:intl/intl.dart';
@@ -26,7 +25,6 @@ class ChatDetails extends StatefulWidget {
 }
 
 class _ChatDetailsState extends State<ChatDetails> {
-  List<Message> _messages = [];
   @override
   Widget build(BuildContext context) {
     TextEditingController textEditingController = TextEditingController();

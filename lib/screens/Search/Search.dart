@@ -1,6 +1,7 @@
 import 'package:aawani/screens/Search/SearchProfile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Search extends StatefulWidget {
   Search({Key? key}) : super(key: key);
@@ -89,7 +90,33 @@ class SearchState extends State<Search> {
                 );
               },
             )
-          : Center(child: Text("Search result will apear here  ")),
+          : Column(
+              children: [
+                Expanded(
+                  child: Container(),
+                  flex: 3,
+                ),
+                Container(
+                    width: 100,
+                    height: 100,
+                    child: Image.asset("lib/icons/ppl.png")),
+                Expanded(child: Container(), flex: 1),
+                Center(
+                  child: Text(
+                    "Search result will apear here  ",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.quicksand(
+                        fontSize: 14,
+                        color: Color.fromARGB(255, 87, 86, 86),
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+                Expanded(
+                  child: Container(),
+                  flex: 3,
+                ),
+              ],
+            ),
     );
   }
 }

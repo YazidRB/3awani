@@ -29,7 +29,7 @@ class _UserTypeState extends State<UserType> {
         child: Column(
           children: [
             Text(
-              'Are you ... ?',
+              'Are you a ... ?',
               style: GoogleFonts.quicksand(
                   color: Colors.grey,
                   fontSize: 28,
@@ -52,8 +52,8 @@ class _UserTypeState extends State<UserType> {
                           }
                         });
                       },
-                      size: 100,
-                      circleSize: 100,
+                      size: 70,
+                      circleSize: 70,
                       isLiked: person,
                       circleColor:
                           CircleColor(start: Colors.grey, end: primaryColor),
@@ -64,7 +64,7 @@ class _UserTypeState extends State<UserType> {
                         return Icon(
                           Icons.person,
                           color: isLiked ? primaryColor : Colors.grey,
-                          size: 100,
+                          size: 70,
                         );
                       },
                     ),
@@ -72,7 +72,7 @@ class _UserTypeState extends State<UserType> {
                       'Person',
                       style: GoogleFonts.quicksand(
                           color: Colors.grey,
-                          fontSize: 28,
+                          fontSize: 19,
                           fontWeight: FontWeight.bold),
                     )
                   ],
@@ -90,8 +90,8 @@ class _UserTypeState extends State<UserType> {
                           }
                         });
                       },
-                      size: 100,
-                      circleSize: 100,
+                      size: 70,
+                      circleSize: 70,
                       isLiked: society,
                       circleColor:
                           CircleColor(start: Colors.grey, end: primaryColor),
@@ -102,7 +102,7 @@ class _UserTypeState extends State<UserType> {
                         return Icon(
                           Icons.store_mall_directory_outlined,
                           color: isLiked ? primaryColor : Colors.grey,
-                          size: 100,
+                          size: 70,
                         );
                       },
                     ),
@@ -110,7 +110,7 @@ class _UserTypeState extends State<UserType> {
                       'Society',
                       style: GoogleFonts.quicksand(
                           color: Colors.grey,
-                          fontSize: 28,
+                          fontSize: 19,
                           fontWeight: FontWeight.bold),
                     )
                   ],
@@ -147,7 +147,8 @@ class _UserTypeState extends State<UserType> {
                     globals.userType = 'P';
                     Navigator.of(context).pushReplacementNamed('UserName');
                   } else
-                    print('no type is selected');
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('No type is selected !')));
                 },
                 splashColor: Color.fromARGB(255, 194, 193, 193),
                 colors: [

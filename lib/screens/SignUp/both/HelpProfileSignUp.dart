@@ -5,6 +5,7 @@ import 'package:aawani/functions/FireStoreFunctions.dart';
 import 'package:aawani/resource/Colors.dart';
 import 'package:aawani/resource/Globals.dart' as globals;
 import 'package:aawani/screens/SignUp/getStarted.dart';
+import 'package:aawani/screens/home/MyHomePage.dart';
 import 'package:aawani/widgets/GredientButton.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -24,7 +25,7 @@ class HelpProfileSignUp extends StatefulWidget {
 class _HelpProfileSignUpState extends State<HelpProfileSignUp> {
   String? phone;
   Uint8List? filee;
-  String profImage = 'null';
+  String? profImage;
   final fsPhone = GlobalKey<FormState>();
   final fsRealName = GlobalKey<FormState>();
   final FirebaseStorage storage = FirebaseStorage.instance;
@@ -37,52 +38,13 @@ class _HelpProfileSignUpState extends State<HelpProfileSignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(70), child: SignUpAppBar()),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 40),
         child: Column(
           children: [
-            Text(
-              "Upload an image so poeple knows you easilly",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.quicksand(
-                  fontSize: 21,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w500),
-            ),
-            Row(
-              children: [
-                Expanded(child: Container()),
-                Container(
-                  margin: EdgeInsets.only(top: 20, bottom: 30),
-                  child: Stack(
-                    children: [
-                      filee == null
-                          ? CircleAvatar(
-                              backgroundImage: AssetImage(
-                                  'assets/images/default-avatar.png'),
-                              radius: 50)
-                          : CircleAvatar(
-                              backgroundImage: MemoryImage(filee!),
-                              radius: 50,
-                            ),
-                      Positioned(
-                          bottom: -7,
-                          left: 62,
-                          child: IconButton(
-                              onPressed: () async => await selectImage(context),
-                              icon: Icon(
-                                Icons.camera_alt,
-                                color: Colors.grey,
-                                size: 30,
-                              )))
-                    ],
-                  ),
-                ),
-                Expanded(child: Container()),
-              ],
-            ),
             Expanded(child: Container()),
             Form(
               key: fsPhone,
@@ -118,8 +80,41 @@ class _HelpProfileSignUpState extends State<HelpProfileSignUp> {
                     hintStyle: GoogleFonts.quicksand(fontSize: 15)),
               ),
             ),
+            Row(
+              children: [
+                Expanded(child: Container()),
+                Container(
+                  margin: EdgeInsets.only(top: 100, bottom: 0),
+                  child: Stack(
+                    children: [
+                      filee == null
+                          ? CircleAvatar(
+                              backgroundColor: Colors.green,
+                              backgroundImage: AssetImage(
+                                  'assets/images/default-avatar.png'),
+                              radius: 50)
+                          : CircleAvatar(
+                              backgroundImage: MemoryImage(filee!),
+                              radius: 50,
+                            ),
+                      Positioned(
+                          bottom: -7,
+                          left: 62,
+                          child: IconButton(
+                              onPressed: () async => await selectImage(context),
+                              icon: Icon(
+                                Icons.camera_alt,
+                                color: Colors.grey,
+                                size: 30,
+                              )))
+                    ],
+                  ),
+                ),
+                Expanded(child: Container()),
+              ],
+            ),
             Expanded(child: Container()),
-            Text('6/7',
+            Text('7/7',
                 style: GoogleFonts.quicksand(
                     fontSize: 19, fontWeight: FontWeight.bold)),
             SizedBox(
@@ -127,7 +122,7 @@ class _HelpProfileSignUpState extends State<HelpProfileSignUp> {
             ),
             StepProgressIndicator(
               totalSteps: 7,
-              currentStep: 6,
+              currentStep: 7,
               size: 8,
               padding: 0,
               selectedColor: primaryColor,
@@ -166,12 +161,14 @@ class _HelpProfileSignUpState extends State<HelpProfileSignUp> {
 
                     globals.phone = phone;
                     globals.realName = realName;
-                    globals.profImage = filee != null
-                        ? profImage
-                        : "assets/images/default-avatar.png";
+                    globals.profImage = profImage;
 
                     await getProfileData();
-                    Navigator.of(context).pushNamed('phone');
+                    // Navigator.of(context).pushNamed('phone');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
+                    );
                   }
                 },
                 splashColor: Color.fromARGB(255, 0, 0, 0),
@@ -179,7 +176,7 @@ class _HelpProfileSignUpState extends State<HelpProfileSignUp> {
                   primaryColor,
                   primaryColor,
                 ],
-                title: "Next",
+                title: "Finish!",
               ),
             ),
             SizedBox(

@@ -41,11 +41,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
-  flutter_chat_ui: ^1.6.0
-  flutter_map: ^1.0.0
+  flutter_launcher_icons: ^0.9.3
   flutter_native_splash: ^2.2.3+1
   flutter_osm_plugin: ^0.34.1+1
-  flutter_sms: ^2.3.3
   flutter_svg: ^1.0.3
   flutter_swipable: ^1.2.1
   flutter_vector_icons: ^1.0.0
@@ -70,9 +68,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  android: true
+  image_path: "lib/icons/default-avatar.png"
+
 flutter_native_splash:
   color: "#FFFFFF"
-  image: "assets/images/default-avatar.png"
+  image: "lib/icons/splash.png"
   android_graviry: center
 
 # For information on the generic Dart part of this file, see the
@@ -89,7 +91,6 @@ flutter:
   assets:
     - lib/icons/
     - assets/images/
-    - assets/images/default-avatar.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

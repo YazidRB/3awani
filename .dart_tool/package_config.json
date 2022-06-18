@@ -128,20 +128,8 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "csslib",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/csslib-0.17.2",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "cupertino_icons",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "diffutil_dart",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/diffutil_dart-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -260,38 +248,14 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "flutter_chat_types",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_chat_types-3.4.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
-      "name": "flutter_chat_ui",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_chat_ui-1.6.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
-      "name": "flutter_link_previewer",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_link_previewer-3.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
-      "name": "flutter_linkify",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_linkify-5.0.2",
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.9.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_lints",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "flutter_map",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_map-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -314,20 +278,8 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "flutter_parsed_text",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_parsed_text-2.2.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "flutter_plugin_android_lifecycle",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.5",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "flutter_sms",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_sms-2.3.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -452,12 +404,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "html",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.15.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "http",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.4",
       "packageUri": "lib/",
@@ -518,32 +464,14 @@
       "languageVersion": "2.16"
     },
     {
-      "name": "json_annotation",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/json_annotation-4.5.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.14"
-    },
-    {
       "name": "latlong",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/latlong-0.6.1",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
     {
-      "name": "latlong2",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/latlong2-0.8.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "like_button",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/like_button-2.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "linkify",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/linkify-4.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -556,12 +484,6 @@
     {
       "name": "lints",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "lists",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/lists-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -586,12 +508,6 @@
     {
       "name": "meta",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "mgrs_dart",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/mgrs_dart-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -692,12 +608,6 @@
       "languageVersion": "2.16"
     },
     {
-      "name": "photo_view",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/photo_view-0.14.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "platform",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/platform-3.1.0",
       "packageUri": "lib/",
@@ -710,38 +620,14 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "polylabel",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/polylabel-1.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.13"
-    },
-    {
-      "name": "positioned_tap_detector_2",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/positioned_tap_detector_2-1.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "process",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/process-4.2.4",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
-      "name": "proj4dart",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/proj4dart-2.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "provider",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.2",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "quiver",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -830,20 +716,8 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "tuple",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/tuple-2.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "typed_data",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "unicode",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/unicode-0.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -920,22 +794,10 @@
       "languageVersion": "2.14"
     },
     {
-      "name": "visibility_detector",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/visibility_detector-0.3.3",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "win32",
       "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/win32-2.5.1",
       "packageUri": "lib/",
       "languageVersion": "2.15"
-    },
-    {
-      "name": "wkt_parser",
-      "rootUri": "file:///C:/Users/Yazid%20RB/Downloads/flutter_windows_3.0.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/wkt_parser-2.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "xdg_directories",
@@ -962,7 +824,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-06-17T11:46:04.052500Z",
+  "generated": "2022-06-18T14:00:28.937528Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }

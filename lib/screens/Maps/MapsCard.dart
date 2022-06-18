@@ -1,3 +1,4 @@
+import 'package:aawani/screens/addPost/PostUrl.dart';
 import 'package:aawani/screens/home/MyHomePage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import "package:flutter/material.dart";
@@ -138,9 +139,11 @@ class _MapsCardState extends State<MapsCard> {
         color = Colors.green;
       } else if (physical) {
         iconData = 'lib/icons/icons8-categorize-48.png';
-        color = Colors.grey;
-      } else
+        color = null;
+      } else {
         iconData = 'lib/icons/icons8-teenager-male-100.png';
+        color = Colors.grey;
+      }
 
       lat = post.data()['lat'];
       long = post.data()['long'];
@@ -250,7 +253,7 @@ class _MapsCardState extends State<MapsCard> {
     return Container(
         child: Scaffold(
             floatingActionButton: FloatingActionButton(
-              backgroundColor: Colors.blue,
+              backgroundColor: Colors.green,
               child: Icon(Icons.my_location_outlined, color: Colors.white),
               onPressed: () async {
                 await post();
@@ -260,22 +263,41 @@ class _MapsCardState extends State<MapsCard> {
                 ? CircularProgressIndicator()
                 : osm.OSMFlutter(
                     onGeoPointClicked: (p) async {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Center(
+                              child: CircularProgressIndicator(
+                                  color: Colors.green),
+                            );
+                          });
                       final snap = await FirebaseFirestore.instance
                           .collection('posts')
                           .where('lat', isEqualTo: p.latitude)
                           .where('long', isEqualTo: p.longitude)
                           .get();
-
+                      String postId = "";
                       final l = snap.docs.length;
                       for (var i = 0; i < l; i++) {
                         final snapshot = await FirebaseFirestore.instance
-                                .collection('posts')
-                                .where('lat', isEqualTo: p.latitude)
-                                .where('long', isEqualTo: p.longitude)
-                                .snapshots()
-                            as AsyncSnapshot<
-                                QuerySnapshot<Map<String, dynamic>>>;
-                        print(snapshot.data!.docs[i].data()['postID']);
+                            .collection('posts')
+                            .where('lat', isEqualTo: p.latitude)
+                            .where('long', isEqualTo: p.longitude)
+                            .snapshots();
+                        snapshot.forEach((element) {
+                          element.docs.forEach((element) {
+                            postId = element.data()['postID'];
+                            print(' yazid ' + postId);
+                          });
+                        });
+                        print("going");
+                        MaterialPageRoute(
+                            builder: (context) => PostUrl(
+                                  postId: postId.toString(),
+                                ));
+                        print("finished ! ");
+
+                        // print(snapshot.data!.docs[i].data()['postID']);
                       }
                     },
                     mapIsLoading: Center(

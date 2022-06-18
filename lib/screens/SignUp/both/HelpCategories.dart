@@ -119,7 +119,7 @@ class _HelpCategoriesState extends State<HelpCategories> {
               ],
             ),
             Expanded(child: Container()),
-            Text('7/7',
+            Text('6/7',
                 style: GoogleFonts.quicksand(
                     fontSize: 19, fontWeight: FontWeight.bold)),
             SizedBox(
@@ -127,7 +127,7 @@ class _HelpCategoriesState extends State<HelpCategories> {
             ),
             StepProgressIndicator(
               totalSteps: 7,
-              currentStep: 7,
+              currentStep: 6,
               size: 8,
               padding: 0,
               selectedColor: primaryColor,
@@ -154,7 +154,7 @@ class _HelpCategoriesState extends State<HelpCategories> {
                   primaryColor,
                   primaryColor,
                 ],
-                title: "Finish!",
+                title: "Next",
               ),
             ),
           ],

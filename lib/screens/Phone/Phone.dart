@@ -6,7 +6,6 @@ import 'package:aawani/screens/home/MyHomePage.dart';
 import 'package:aawani/widgets/GredientButton.dart';
 import 'package:firebase_auth/firebase_auth.dart' as Auth;
 import 'package:flutter/material.dart';
-import 'package:flutter_sms/flutter_sms.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Phone extends StatefulWidget {
@@ -33,58 +32,45 @@ class _PhoneState extends State<Phone> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Form(
-          key: _formKey,
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          title: Text(
+            "Vérification code ",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.quicksand(
+                fontSize: 21, color: Colors.black, fontWeight: FontWeight.w500),
+          ),
+        ),
+        body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(flex: 2),
-              Expanded(
-                flex: 4,
-                child: Text(
-                  "confirm code number please \n ${globals.phone!.substring(0, 4)}*********",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.quicksand(
-                      fontSize: 21,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w500),
-                ),
+              Spacer(),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("lib/icons/icons8-message-64.png"),
+                  Text(
+                    "send code to \n ${globals.phone!.substring(0, 4)}****** ",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.quicksand(
+                        fontSize: 21,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
               ),
-              Expanded(
-                flex: 3,
-                child: Row(
-                  children: [
-                    Spacer(flex: 1),
-                    Expanded(
-                      flex: 6,
-                      child: TextFormField(
-                        controller: phoneController,
-                        keyboardType: TextInputType.phone,
-                        decoration: InputDecoration(labelText: "Phone Number"),
-                        validator: (value) {
-                          String pattern = r'(^(?:[+0]9)?[0-9]{8,12}$)';
-                          RegExp regExp = new RegExp(pattern);
-
-                          if (value!.isEmpty) {
-                            return "Please enter your phone number";
-                          }
-                          if (!regExp.hasMatch(value)) {
-                            return "Please enter a valid phone number";
-                          }
-
-                          return null;
-                        },
-                      ),
-                    ),
-                    Spacer(flex: 1),
-                  ],
-                ),
-              ),
-              Spacer(flex: 2),
-              Expanded(
-                  child: ElevatedButton(
-                      onPressed: () => onPressed(context),
-                      child: Text("Confirm"))),
-              Spacer(flex: 2),
+              Spacer(),
+              ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.cyan)),
+                  onPressed: () => onPressed(context),
+                  child: Text("Send")),
+              Spacer()
             ],
           ),
         ),
@@ -93,55 +79,51 @@ class _PhoneState extends State<Phone> {
   }
 
   void onPressed(BuildContext context) {
-    String phone = phoneController.text;
-    // String name = nameController.text;
+    String phone = globals.phone!;
 
-    if (_formKey.currentState!.validate()) {
-      Auth.FirebaseAuth.instance.verifyPhoneNumber(
-        phoneNumber: '+213' + globals.phone!,
-        timeout: Duration(seconds: 120),
-        verificationCompleted: (Auth.PhoneAuthCredential credential) {
-          print("it's valid");
-        },
-        verificationFailed: (Auth.FirebaseAuthException e) {
-          print("failed");
+    Auth.FirebaseAuth.instance.verifyPhoneNumber(
+      phoneNumber: '+213' + globals.phone!,
+      timeout: Duration(seconds: 120),
+      verificationCompleted: (Auth.PhoneAuthCredential credential) {
+        print("it's valid");
+      },
+      verificationFailed: (Auth.FirebaseAuthException e) {
+        print("failed");
 
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(e.toString())));
-        },
-        codeSent: (String verificationId, int? resendToken) async {
-          showDialog(
-              barrierDismissible: true,
-              context: context,
-              builder: (BuildContext context) {
-                return SMSCodeDialog(
-                    phoneNumber: _countryCode + phone,
-                    resendToken: resendToken,
-                    onSMSCodeEntered: (smsCode, dialogContext) async {
-                      try {
-                        Auth.PhoneAuthCredential credential =
-                            Auth.PhoneAuthProvider.credential(
-                                verificationId: verificationId,
-                                smsCode: smsCode);
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(e.toString())));
+      },
+      codeSent: (String verificationId, int? resendToken) async {
+        showDialog(
+            barrierDismissible: true,
+            context: context,
+            builder: (BuildContext context) {
+              return SMSCodeDialog(
+                  phoneNumber: _countryCode + phone,
+                  resendToken: resendToken,
+                  onSMSCodeEntered: (smsCode, dialogContext) async {
+                    try {
+                      Auth.PhoneAuthCredential credential =
+                          Auth.PhoneAuthProvider.credential(
+                              verificationId: verificationId, smsCode: smsCode);
 
-                        Navigator.of(dialogContext).pop();
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => MyHomePage()),
-                        );
-                      } catch (e) {
-                        print(e);
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text("Wrong sms "
-                                "code")));
-                      }
-                    });
-              });
-        },
-        codeAutoRetrievalTimeout: (String verificationId) {
-          print("timeout");
-        },
-      );
-    }
+                      Navigator.of(dialogContext).pop();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyHomePage()),
+                      );
+                    } catch (e) {
+                      print(e);
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text("Wrong sms "
+                              "code")));
+                    }
+                  });
+            });
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {
+        print("timeout");
+      },
+    );
   }
 }

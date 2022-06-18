@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
    <application
-        android:label="aawani"
+        android:label="Aawani"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

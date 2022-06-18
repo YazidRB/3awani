@@ -13,12 +13,16 @@ class CategoryChose extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          centerTitle: false,
+          centerTitle: true,
           title: Text('Aawani',
               style: GoogleFonts.quicksand(
                   color: Colors.green,
                   fontWeight: FontWeight.bold,
                   fontSize: 25)),
+          leading: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Image.asset('lib/icons/default-avatar.png'),
+          ),
           backgroundColor: Colors.white,
           shadowColor: Colors.white,
           elevation: 0,
@@ -38,6 +42,8 @@ class CategoryChose extends StatelessWidget {
           children: [
             Expanded(
               child: GridView.count(
+                physics: NeverScrollableScrollPhysics(),
+                childAspectRatio: 1,
                 crossAxisCount: 2,
                 children: [
                   CategoryTab(
